@@ -1,0 +1,36 @@
+<!DOCTYPE html>   //Tells the browser that this page is written in modern HTML5.
+<html lang="en"> //The main language of this webpage is English.
+  <head>  //The head contains information about the webpage, rather than the actual visible webpage content.
+    <meta charset="UTF-8" /> //Use UTF-8 to understand the characters on this webpage.(emoji , letters)
+    <link rel="icon" type="image/png" href="/logo.png?v=1000" />  //link → Connects your HTML page to another file/resource.
+rel="icon" → Says that the connected file is the website's icon.
+type="image/png" → Says that the icon is a PNG image.
+href="/logo.png?v=1000" → Tells the browser where the logo file is located.
+/logo.png → The name/location of your logo image.
+?v=1000 → Helps the browser load the updated logo instead of an old cached one.
+/> → Closes the link tag.
+    <link rel="shortcut icon" type="image/png" href="/logo.png?v=1000" />
+    <link rel="apple-touch-icon" href="/logo.png?v=1000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> //name="viewport"Means:“I'm giving you instructions about how the webpage should fit into the device's screen.”
+    //width=device-widthMeans:“Make the webpage width equal to the device's actual screen width.”
+    //initial-scale=1.0Means:“Start the page at normal 100% zoom.”
+    <meta 
+      name="description" 
+      content="BridgeLabz BLuprint.AI – AI-powered Fellowship Mapping & Mandate Intelligence System" 
+    />
+    <meta 
+      name="keywords" 
+      content="BridgeLabz, BLuprint, Fellowship, MIS, Hiring, Mapping" 
+    />  //This provides a short description of your website.
+    This can be used by search engines when showing your website in search results.This does not display as normal text inside your webpage.
+    //It's metadata about the webpage. //This specifies keywords related to your website.
+    <title>BLuprint.AI</title>  //This sets the title of  webpage.
+  </head>
+  <body> //The body contains the actual visible webpage content.
+    <div id="root"></div>  You're basically creating an empty container: React will later take this empty <div> and put your application's UI inside it.
+    <script type="module" src="/src/main.tsx"></script> //Load and run my main React/TypeScript file.” 
+    //script This tells the browser:“I want to load/run JavaScript code.” //type="module" This tells the browser that the JavaScript file is an ES module.
+    //(ES Module = a modern way to divide JavaScript code into separate files and share them using import and export.)
+    //src="/src/main.tsx" This tells the browser where your main application file is.
+  </body>
+</html>
