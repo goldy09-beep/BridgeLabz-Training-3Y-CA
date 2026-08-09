@@ -1,0 +1,146 @@
+ANS-1 : Frontend development is everything a user sees and interacts with directly in the browser — layout, colors, buttons, forms, animations. It's built with HTML, CSS, and JavaScript (often frameworks like React or Vue). Example: the menu, cart page, and checkout screen you interact with on Amazon.
+
+Backend development is the server-side logic that frontend never shows you — processing orders, checking inventory, talking to databases, handling authentication. Built with languages like Node.js, Python (Django/Flask), Java (Spring), or PHP. Example: when you click "Buy Now" on Amazon, the backend verifies stock, charges your card, and creates an order record.
+
+Full-stack development means working on both sides — building the interface and the server logic that powers it. A full-stack developer might build a food-delivery app's ordering screen (frontend) and the logic that assigns it to a nearby restaurant and driver (backend).
+
+ANS-2 :Client     
+ (Web Browser)  
+
+         |
+   HTTP Request
+         |
+         v
+
+   Web Server   
+ (Apache/Nginx) 
+         |
+ Processes Request
+         |
+         v
+
+    Database    
+ (MySQL/MongoDB)
+
+         ^
+         |
+    Sends Data
+         |
+
+   Web Server  
+
+         |
+  HTTP Response
+         |
+         v
+
+     Client    
+
+
+ANS-3 : DNS lookup — you type a URL, the browser asks a DNS server to translate the domain name into an IP address.
+Connection — the browser opens a TCP connection to that IP (usually secured with TLS for HTTPS).
+HTTP request — the browser sends a GET request for the page.
+Server response — the server returns an HTML document
+Parsing and rendering — the browser parses the HTML into a DOM tree, fetches linked CSS and JS, builds the render tree, and paints pixels to the screen.
+JavaScript execution — scripts run, which may fetch more data (via APIs) and update the page dynamically.
+
+
+ANS-4 : Tool                   Purpose                      
+
+
+ VS Code               Code editor                       
+ Google Chrome         Test web pages                    
+ Git                    Version control                   
+ GitHub                 Store source code online          
+ Node.js                JavaScript runtime                
+ npm                    Package manager                   
+ Live Server Extension  Automatically refreshes web pages 
+ Terminal               Executes commands   
+
+ ANS-5 : A Web Server is software that receives HTTP requests from clients (browsers) and sends back web pages or data.
+Examples
+Apache HTTP Server
+Nginx
+Microsoft IIS
+LiteSpeed
+Node.js (Express)
+
+
+ANS-6 : Frontend Developer-
+>Designs website UI
+>Creates responsive layouts
+>Uses HTML, CSS, JavaScript
+
+Backend Developer-
+>Builds APIs
+>Handles authentication
+>Connects application with database
+>Implements business logic 
+
+Database Administrator (DBA) - 
+>Designs database
+>Maintains data security
+>Performs backup and recovery
+>Optimizes database performance
+
+
+ANS-7 : Steps-
+ 8.⁠ ⁠Download Visual Studio Code.
+ 9.⁠ ⁠Install VS Code.
+10.⁠ ⁠Install Google Chrome.
+11.⁠ ⁠Install extensions:
+      Live Server
+      Prettier
+      HTML CSS Support
+      JavaScript (ES6) snippets
+ 5.⁠ ⁠Create a project folder.
+ 6.⁠ ⁠Create:
+      index.html
+      style.css
+      script.js 
+ 7.⁠ ⁠Open index.html using Live Server.
+
+
+
+ANS-8 : Static Website           Dynamic Website
+ > Fixed content             >Content changes dynamically
+ > HTML and CSS only        >Uses server-side languages   databases
+ > Faster                >Slightly slower 
+ > Easy to host          >More complex 
+
+
+ANS-9 : Browser          Rendering Engine
+>Google Chrome	    >Blink
+>Microsoft Edge	    >Blink
+>Mozilla Firefox	    >Gecko
+>Apple Safari	    >WebKit
+>Opera                >Blink
+
+Rendering Engine
+A rendering engine converts HTML, CSS, and JavaScript into the visual webpage shown in the browser.
+Differences:
+>Blink: Fast and widely used (Chrome, Edge, Opera).
+>Gecko: Mozilla's independent engine, focused on web standards.
+>WebKit: Used by Safari, optimized for Apple devices.
+
+
+ANS-10 :    User
+                   |
+                   v
+       
+             Web Browser
+                 v
+             HTTP Request
+                 v
+             Web Server     
+            (Apache/Nginx)    
+           |            |
+           |            |
+           v            v
+         API        Database  
+      REST API     MySQL/Mongo     
+      
+           HTTP Response
+                 |
+                 v
+            Web Browser
