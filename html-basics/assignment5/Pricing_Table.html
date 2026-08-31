@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pricing Plans</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+           ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+           ========================= */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: #f1f5f9;
+
+            color: #1e293b;
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            background-color: #172554;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+
+            color: #bfdbfe;
+        }
+
+
+        /* =========================
+           PRICING CONTAINER
+           ========================= */
+
+        .pricing-container {
+
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            /*
+                Flexbox creates three
+                columns in one row.
+            */
+            display: flex;
+
+            /*
+                Space between pricing cards.
+            */
+            gap: 25px;
+
+            /*
+                Makes all cards have
+                equal height.
+            */
+            align-items: stretch;
+        }
+
+
+        /* =========================
+           PRICING PLAN
+           ========================= */
+
+        .plan {
+
+            /*
+                Each plan gets equal width.
+            */
+            flex: 1;
+
+            /*
+                Makes the content use
+                the full height of the card.
+            */
+            display: flex;
+
+            flex-direction: column;
+
+            /*
+                Box Model
+            */
+            padding: 35px;
+
+            margin: 5px;
+
+            background-color: white;
+
+            border: 2px solid #cbd5e1;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.12);
+
+            /*
+                Smooth animation for hover.
+            */
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        /* =========================
+           HOVER EFFECT
+           ========================= */
+
+        .plan:hover {
+
+            /*
+                Slightly enlarges the box.
+            */
+            transform: scale(1.05);
+
+            /*
+                Changes background color.
+            */
+            background-color: #eff6ff;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* =========================
+           PLAN HEADING
+           ========================= */
+
+        .plan h2 {
+
+            text-align: center;
+
+            font-size: 1.8rem;
+
+            color: #1e3a8a;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           PRICE
+           ========================= */
+
+        .price {
+
+            text-align: center;
+
+            font-size: 2.5rem;
+
+            font-weight: bold;
+
+            color: #2563eb;
+
+            margin-bottom: 25px;
+        }
+
+        .price span {
+
+            font-size: 1rem;
+
+            font-weight: normal;
+
+            color: #64748b;
+        }
+
+
+        /* =========================
+           FEATURES LIST
+           ========================= */
+
+        .features {
+
+            /*
+                Removes default bullets.
+            */
+            list-style: none;
+
+            margin-bottom: 30px;
+
+            /*
+                Makes feature area
+                take available space.
+            */
+            flex-grow: 1;
+        }
+
+        .features li {
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #e2e8f0;
+
+            text-align: center;
+
+            color: #475569;
+        }
+
+
+        /* =========================
+           BUTTON
+           ========================= */
+
+        .plan-button {
+
+            display: block;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            background-color: #2563eb;
+
+            color: white;
+
+            padding: 13px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: background-color 0.3s ease;
+        }
+
+        .plan-button:hover {
+
+            background-color: #1e3a8a;
+        }
+
+
+        /* =========================
+           STANDARD PLAN
+           MOST POPULAR
+           ========================= */
+
+        .popular {
+
+            /*
+                Different border color.
+            */
+            border: 4px solid #f59e0b;
+
+            /*
+                Different border style.
+            */
+            border-style: double;
+
+            background-color: #fffbeb;
+
+            /*
+                Makes the Standard plan
+                visually stand out.
+            */
+            transform: translateY(-10px);
+        }
+
+
+        .popular h2 {
+
+            color: #b45309;
+        }
+
+
+        /* Popular label */
+
+        .popular-label {
+
+            background-color: #f59e0b;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 7px;
+
+            margin: -35px -35px 25px -35px;
+
+            font-size: 0.9rem;
+
+            font-weight: bold;
+
+            border-radius: 10px 10px 0 0;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+
+            background-color: #172554;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 70px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            .pricing-container {
+
+                /*
+                    Changes the three columns
+                    into one column.
+                */
+                flex-direction: column;
+            }
+
+            .plan {
+
+                width: 100%;
+
+                margin: 0 0 20px 0;
+            }
+
+            .popular {
+
+                /*
+                    Removes the upward movement
+                    on smaller screens.
+                */
+                transform: none;
+            }
+
+            .popular:hover {
+
+                transform: scale(1.03);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header>
+
+        <h1>Choose Your Plan</h1>
+
+        <p>
+            Simple and affordable pricing for everyone
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <main>
+
+        <section class="pricing-container">
+
+
+            <!-- =========================
+                 BASIC PLAN
+                 ========================= -->
+
+            <article class="plan">
+
+                <h2>Basic</h2>
+
+                <div class="price">
+                    $9
+                    <span>/month</span>
+                </div>
+
+
+                <ul class="features">
+
+                    <li>5 Projects</li>
+
+                    <li>10 GB Storage</li>
+
+                    <li>Email Support</li>
+
+                    <li>Basic Analytics</li>
+
+                </ul>
+
+
+                <a href="#" class="plan-button">
+                    Choose Basic
+                </a>
+
+            </article>
+
+
+            <!-- =========================
+                 STANDARD PLAN
+                 MOST POPULAR
+                 ========================= -->
+
+            <article class="plan popular">
+
+                <div class="popular-label">
+                    MOST POPULAR
+                </div>
+
+                <h2>Standard</h2>
+
+                <div class="price">
+                    $19
+                    <span>/month</span>
+                </div>
+
+
+                <ul class="features">
+
+                    <li>20 Projects</li>
+
+                    <li>50 GB Storage</li>
+
+                    <li>Priority Email Support</li>
+
+                    <li>Advanced Analytics</li>
+
+                    <li>Team Collaboration</li>
+
+                </ul>
+
+
+                <a href="#" class="plan-button">
+                    Choose Standard
+                </a>
+
+            </article>
+
+
+            <!-- =========================
+                 PREMIUM PLAN
+                 ========================= -->
+
+            <article class="plan">
+
+                <h2>Premium</h2>
+
+                <div class="price">
+                    $39
+                    <span>/month</span>
+                </div>
+
+
+                <ul class="features">
+
+                    <li>Unlimited Projects</li>
+
+                    <li>200 GB Storage</li>
+
+                    <li>24/7 Support</li>
+
+                    <li>Advanced Analytics</li>
+
+                    <li>Team Collaboration</li>
+
+                    <li>Custom Integrations</li>
+
+                </ul>
+
+
+                <a href="#" class="plan-button">
+                    Choose Premium
+                </a>
+
+            </article>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Pricing Plans. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

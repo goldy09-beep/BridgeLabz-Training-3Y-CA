@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Makes the form responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+           ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+           ========================= */
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            /*
+                Flexbox is used to center
+                the contact form.
+            */
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background-color: #e0f2fe;
+
+            color: #172033;
+
+            padding: 30px;
+        }
+
+
+        /* =========================
+           CONTACT CONTAINER
+           ========================= */
+
+        .contact-container {
+
+            width: 100%;
+
+            max-width: 600px;
+
+            background-color: white;
+
+            padding: 40px;
+
+            border-radius: 15px;
+
+            /*
+                Subtle shadow around form.
+            */
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================
+           HEADING
+           ========================= */
+
+        .contact-container h1 {
+
+            text-align: center;
+
+            font-size: 2.5rem;
+
+            color: #1e3a8a;
+
+            margin-bottom: 10px;
+        }
+
+
+        .contact-container > p {
+
+            text-align: center;
+
+            color: #64748b;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           FORM
+           ========================= */
+
+        form {
+
+            width: 100%;
+        }
+
+
+        /* =========================
+           FORM GROUP
+           ========================= */
+
+        .form-group {
+
+            /*
+                Creates spacing between
+                different fields.
+            */
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           LABEL
+           ========================= */
+
+        label {
+
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+            color: #1e293b;
+        }
+
+
+        /* =========================
+           INPUTS AND TEXTAREA
+           ========================= */
+
+        input,
+        textarea {
+
+            width: 100%;
+
+            /*
+                Space inside input.
+            */
+            padding: 13px 15px;
+
+            /*
+                Rounded corners.
+            */
+            border-radius: 8px;
+
+            /*
+                Normal border.
+            */
+            border: 2px solid #cbd5e1;
+
+            /*
+                Subtle shadow.
+            */
+            box-shadow:
+                0 3px 8px rgba(0, 0, 0, 0.08);
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 1rem;
+
+            color: #172033;
+
+            background-color: #f8fafc;
+
+            /*
+                Smooth focus transition.
+            */
+            transition:
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        /* =========================
+           TEXTAREA
+           ========================= */
+
+        textarea {
+
+            /*
+                Gives enough space
+                for the message.
+            */
+            min-height: 150px;
+
+            resize: vertical;
+        }
+
+
+        /* =========================
+           FOCUS EFFECT
+           ========================= */
+
+        input:focus,
+        textarea:focus {
+
+            /*
+                Border changes color
+                when the user clicks
+                inside an input.
+            */
+            border-color: #2563eb;
+
+            /*
+                Removes the browser's
+                default outline.
+            */
+            outline: none;
+
+            box-shadow:
+                0 0 8px rgba(37, 99, 235, 0.25);
+        }
+
+
+        /* =========================
+           SUBMIT BUTTON
+           ========================= */
+
+        button {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background-color: #2563eb;
+
+            color: white;
+
+            font-size: 1rem;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease;
+        }
+
+
+        button:hover {
+
+            background-color: #1e3a8a;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+
+            margin-top: 30px;
+
+            color: #475569;
+
+            text-align: center;
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .contact-container {
+
+                padding: 25px;
+
+            }
+
+            .contact-container h1 {
+
+                font-size: 2rem;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         CONTACT CONTAINER
+         ========================= -->
+
+    <main class="contact-container">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            Have a question? Send us a message.
+        </p>
+
+
+        <!-- =========================
+             SEMANTIC FORM
+             ========================= -->
+
+        <form action="#" method="post">
+
+
+            <!-- Name -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Subject -->
+
+            <div class="form-group">
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Enter subject"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Message -->
+
+            <div class="form-group">
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Write your message here..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- Submit Button -->
+
+            <button type="submit">
+                Send Message
+            </button>
+
+
+        </form>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Contact Page. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

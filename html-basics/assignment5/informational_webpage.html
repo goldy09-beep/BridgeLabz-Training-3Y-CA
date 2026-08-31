@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Manali</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+           ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+           ========================= */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: #f1f5f9;
+
+            color: #172033;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            background-color: #0f3d3e;
+
+            color: white;
+
+            padding: 30px;
+
+            text-align: center;
+
+            /* Border separates header from navigation */
+            border-bottom: 5px solid #f59e0b;
+        }
+
+        header h1 {
+            /* Large heading */
+            font-size: 2.8rem;
+
+            /* Bold heading */
+            font-weight: 800;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
+        nav {
+            background-color: #14532d;
+
+            padding: 18px;
+
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            /* Space between navigation links */
+            margin: 0 20px;
+
+            font-size: 1.1rem;
+
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #facc15;
+        }
+
+
+        /* =========================
+           MAIN
+           ========================= */
+
+        main {
+            width: 100%;
+        }
+
+
+        /* =========================
+           COMMON SECTION STYLE
+           ========================= */
+
+        .section {
+            /* Full width */
+            width: 100%;
+
+            min-height: 500px;
+
+            padding: 100px 10%;
+
+            /* Creates separation between sections */
+            border-bottom: 8px solid #f1f5f9;
+
+            /* Parallax-like background */
+            background-attachment: fixed;
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .section h2 {
+            margin-bottom: 25px;
+
+            color: white;
+
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .section p {
+            max-width: 700px;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+            background-color: rgba(255, 255, 255, 0.88);
+
+            border: 3px solid white;
+
+            border-radius: 10px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           SECTION 1
+           LINEAR GRADIENT
+           ========================= */
+
+        .intro {
+            /*
+                Linear gradient changes color
+                gradually from one direction
+                to another.
+            */
+            background:
+                linear-gradient(
+                    135deg,
+                    #0ea5e9,
+                    #1e3a8a
+                );
+
+            /* Required fixed background */
+            background-attachment: fixed;
+        }
+
+        .intro h2 {
+            /* Different font size */
+            font-size: 3rem;
+
+            /* Heavy font weight */
+            font-weight: 900;
+        }
+
+
+        /* =========================
+           SECTION 2
+           RADIAL GRADIENT
+           ========================= */
+
+        .places {
+            /*
+                Radial gradient starts
+                from the center and spreads outward.
+            */
+            background:
+                radial-gradient(
+                    circle,
+                    #fbbf24,
+                    #b45309,
+                    #451a03
+                );
+
+            /* Required fixed background */
+            background-attachment: fixed;
+        }
+
+        .places h2 {
+            font-size: 2.5rem;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           SECTION 3
+           BACKGROUND IMAGE
+           ========================= */
+
+        .culture {
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.45),
+                    rgba(0, 0, 0, 0.45)
+                ),
+                url("https://picsum.photos/id/1018/1600/900");
+
+            background-size: cover;
+
+            background-position: center;
+
+            /* Second fixed background */
+            background-attachment: fixed;
+        }
+
+        .culture h2 {
+            font-size: 2.2rem;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           SECTION 4
+           ========================= */
+
+        .food {
+            background-color: #dcfce7;
+
+            background-attachment: fixed;
+        }
+
+        .food h2 {
+            color: #14532d;
+
+            text-shadow: none;
+
+            font-size: 2rem;
+
+            font-weight: 500;
+        }
+
+        .food p {
+            color: #14532d;
+
+            background-color: white;
+
+            border: 2px solid #166534;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            background-color: #0f3d3e;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            border-top: 5px solid #f59e0b;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                display: block;
+
+                margin: 10px;
+            }
+
+            .section {
+                padding: 70px 6%;
+
+                min-height: 450px;
+
+                /*
+                    Fixed backgrounds can behave differently
+                    on some mobile browsers, so normal scrolling
+                    is used on small screens.
+                */
+                background-attachment: scroll;
+            }
+
+            .intro h2 {
+                font-size: 2.2rem;
+            }
+
+            .places h2 {
+                font-size: 2rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header>
+
+        <h1>Explore Manali</h1>
+
+        <p>
+            Discover the beauty of the mountains
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         NAVIGATION
+         ========================= -->
+
+    <nav>
+
+        <a href="#intro">Home</a>
+
+        <a href="#places">Places</a>
+
+        <a href="#culture">Culture</a>
+
+        <a href="#food">Food</a>
+
+    </nav>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <main>
+
+
+        <!-- =========================
+             SECTION 1
+             LINEAR GRADIENT
+             ========================= -->
+
+        <section id="intro" class="section intro">
+
+            <h2>Welcome to Manali</h2>
+
+            <p>
+                Manali is a beautiful hill station located in
+                Himachal Pradesh, India. It is surrounded by
+                snow-covered mountains, green forests and
+                beautiful valleys.
+            </p>
+
+            <p>
+                The destination is popular among tourists who
+                enjoy nature, adventure and peaceful surroundings.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             SECTION 2
+             RADIAL GRADIENT
+             ========================= -->
+
+        <section id="places" class="section places">
+
+            <h2>Famous Places</h2>
+
+            <p>
+                Manali has many beautiful places to visit such as
+                Solang Valley, Rohtang Pass, Hidimba Temple and
+                Mall Road.
+            </p>
+
+            <p>
+                Solang Valley is popular for adventure activities
+                such as paragliding and skiing during suitable
+                seasons.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             SECTION 3
+             CULTURE
+             ========================= -->
+
+        <section id="culture" class="section culture">
+
+            <h2>Culture of Manali</h2>
+
+            <p>
+                The culture of Manali reflects the traditions of
+                Himachal Pradesh. Local festivals, traditional
+                clothing, music and handicrafts are important
+                parts of the region.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             SECTION 4
+             FOOD
+             ========================= -->
+
+        <section id="food" class="section food">
+
+            <h2>Local Food</h2>
+
+            <p>
+                Visitors can enjoy traditional Himachali dishes
+                such as Siddu, Dham, Madra and various local
+                breads and beverages.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Explore Manali | Created by Goldy Pandey
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

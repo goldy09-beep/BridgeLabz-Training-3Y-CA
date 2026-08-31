@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Goldy Pandey | Portfolio</title>
+
+    <style>
+        /* =========================
+           BASIC RESET
+           ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* =========================
+           BODY
+           ========================= */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            /* Flexbox helps keep footer at the bottom */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            background-color: #f1f5f9;
+            color: #172554;
+        }
+
+        /* =========================
+           FIXED HEADER
+           ========================= */
+
+        header {
+            /* Header remains at the top while scrolling */
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            /* px unit */
+            padding: 20px 5%;
+
+            background-color: #172554;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            /* Keeps header above other content */
+            z-index: 1000;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            /* rem unit */
+            font-size: 1.8rem;
+        }
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
+        nav a {
+            /* em unit */
+            margin-left: 1.5em;
+
+            color: white;
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #93c5fd;
+        }
+
+        /* =========================
+           MAIN CONTENT
+           ========================= */
+
+        main {
+            /* Because header is fixed,
+               extra space is required at the top */
+            padding-top: 100px;
+
+            /* Percentage unit */
+            width: 90%;
+
+            margin: 0 auto;
+
+            flex: 1;
+        }
+
+        /* =========================
+           HOME / HERO SECTION
+           ========================= */
+
+        .hero {
+            /* vh unit */
+            min-height: 80vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 50px;
+
+            padding: 50px 5%;
+        }
+
+        .hero-content {
+            width: 55%;
+        }
+
+        .hero-content h2 {
+            /* rem unit */
+            font-size: 3rem;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            /* em unit */
+            font-size: 1.2em;
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-content span {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        /* =========================
+           PROFILE IMAGE
+           ========================= */
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            /* px unit */
+            border: 6px solid #2563eb;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* =========================
+           ABOUT SECTION
+           ========================= */
+
+        #about {
+            /* Percentage based width */
+            width: 100%;
+
+            padding: 60px 8%;
+
+            margin-bottom: 30px;
+
+            background-color: white;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #about h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        #about p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* =========================
+           CONTACT SECTION
+           ========================= */
+
+        #contact {
+            padding: 60px 8%;
+            margin-bottom: 30px;
+
+            background-color: #dbeafe;
+
+            border-radius: 15px;
+        }
+
+        #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            padding: 20px;
+
+            text-align: center;
+
+            background-color: #172554;
+            color: white;
+
+            /* Footer is pushed to bottom
+               because body uses flexbox */
+            margin-top: auto;
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .profile-image {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header>
+
+        <h1>Goldy Pandey</h1>
+
+        <!-- Navigation links -->
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <main>
+
+        <!-- Home Section -->
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <h2>
+                    Hello, I'm <span>Goldy Pandey</span>
+                </h2>
+
+                <p>
+                    I am a B.Tech Computer Science student passionate about
+                    programming, web development, cloud computing and
+                    problem solving. I enjoy learning new technologies
+                    and building useful projects.
+                </p>
+
+                <p>
+                    Welcome to my personal portfolio website.
+                </p>
+
+            </div>
+
+
+            <!-- Profile Image -->
+            <div>
+                <img
+                    class="profile-image"
+                    src="https://via.placeholder.com/300"
+                    alt="Goldy Pandey Profile Image"
+                >
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT SECTION
+             ========================= -->
+
+        <section id="about">
+
+            <h2>About Me</h2>
+
+            <p>
+                I am a Computer Science student who enjoys solving
+                programming problems and developing websites. I am
+                continuously improving my skills in Java, Python,
+                HTML, CSS, DSA and cloud technologies.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT SECTION
+             ========================= -->
+
+        <section id="contact">
+
+            <h2>Contact</h2>
+
+            <p>
+                Email: goldy@example.com
+            </p>
+
+            <p>
+                Feel free to contact me for projects and collaborations.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Goldy Pandey. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

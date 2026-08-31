@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Makes the gallery responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Photo Gallery</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+           ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+           ========================= */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: #f1f5f9;
+
+            color: #172033;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            background-color: #172554;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #bfdbfe;
+
+            font-size: 1.1rem;
+        }
+
+
+        /* =========================
+           GALLERY CONTAINER
+           ========================= */
+
+        .gallery {
+
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: 0 auto 50px;
+
+            /*
+                CSS Grid creates multiple
+                columns automatically.
+            */
+            display: grid;
+
+            /*
+                Each column has a minimum
+                width of 250px.
+                The columns automatically
+                adjust according to screen size.
+            */
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 25px;
+        }
+
+
+        /* =========================
+           GALLERY ITEM
+           ========================= */
+
+        .gallery-item {
+
+            /*
+                Needed because the caption
+                will use position: absolute.
+            */
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 15px;
+
+            background-color: white;
+
+            /*
+                Shadow makes the gallery
+                cards look modern.
+            */
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================
+           IMAGE
+           ========================= */
+
+        .gallery-item img {
+
+            width: 100%;
+
+            height: 280px;
+
+            /*
+                Makes images fill the box
+                without becoming distorted.
+            */
+            object-fit: cover;
+
+            display: block;
+
+            /*
+                Required scale animation.
+            */
+            transition: transform 0.4s ease;
+        }
+
+
+        /* =========================
+           IMAGE HOVER
+           ========================= */
+
+        .gallery-item:hover img {
+
+            /*
+                Image slightly enlarges
+                when mouse moves over it.
+            */
+            transform: scale(1.1);
+        }
+
+
+        /* =========================
+           CAPTION OVERLAY
+           ========================= */
+
+        .caption {
+
+            /*
+                Places caption over image.
+            */
+            position: absolute;
+
+            bottom: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            padding: 20px;
+
+            text-align: center;
+
+            background-color: rgba(0, 0, 0, 0.7);
+
+            color: white;
+
+            font-size: 1.1rem;
+
+            /*
+                Caption is hidden initially.
+            */
+            opacity: 0;
+
+            /*
+                Smooth caption appearance.
+            */
+            transition: opacity 0.4s ease;
+        }
+
+
+        /* =========================
+           SHOW CAPTION ON HOVER
+           ========================= */
+
+        .gallery-item:hover .caption {
+
+            /*
+                Makes caption visible.
+            */
+            opacity: 1;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+
+            background-color: #172554;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 20px;
+
+            margin-top: 50px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            .gallery {
+
+                /*
+                    One column on small screens.
+                */
+                grid-template-columns: 1fr;
+
+                width: 92%;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header>
+
+        <h1>My Photo Gallery</h1>
+
+        <p>
+            A collection of beautiful moments
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <main>
+
+        <section class="gallery">
+
+
+            <!-- Image 1 -->
+
+            <article class="gallery-item">
+
+                <img
+                    src="https://picsum.photos/id/1015/600/400"
+                    alt="Mountain landscape"
+                >
+
+                <div class="caption">
+                    Beautiful Mountains
+                </div>
+
+            </article>
+
+
+            <!-- Image 2 -->
+
+            <article class="gallery-item">
+
+                <img
+                    src="https://picsum.photos/id/1016/600/400"
+                    alt="Nature landscape"
+                >
+
+                <div class="caption">
+                    Peaceful Nature
+                </div>
+
+            </article>
+
+
+            <!-- Image 3 -->
+
+            <article class="gallery-item">
+
+                <img
+                    src="https://picsum.photos/id/1018/600/400"
+                    alt="Forest landscape"
+                >
+
+                <div class="caption">
+                    Green Forest
+                </div>
+
+            </article>
+
+
+            <!-- Image 4 -->
+
+            <article class="gallery-item">
+
+                <img
+                    src="https://picsum.photos/id/1019/600/400"
+                    alt="Mountain view"
+                >
+
+                <div class="caption">
+                    Mountain View
+                </div>
+
+            </article>
+
+
+            <!-- Image 5 -->
+
+            <article class="gallery-item">
+
+                <img
+                    src="https://picsum.photos/id/1020/600/400"
+                    alt="Animal in nature"
+                >
+
+                <div class="caption">
+                    Wildlife
+                </div>
+
+            </article>
+
+
+            <!-- Image 6 -->
+
+            <article class="gallery-item">
+
+                <img
+                    src="https://picsum.photos/id/1024/600/400"
+                    alt="Beautiful animal"
+                >
+
+                <div class="caption">
+                    Nature and Wildlife
+                </div>
+
+            </article>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 My Photo Gallery
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

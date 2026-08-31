@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daily Tech Magazine</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+           ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+           ========================= */
+
+        body {
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            background-color: #e5e7eb;
+
+            color: #1f2937;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+
+            background-color: #111827;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            border-bottom: 5px solid #dc2626;
+        }
+
+
+        header h1 {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 2.8rem;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 8px;
+        }
+
+
+        header p {
+
+            font-size: 1rem;
+
+            color: #d1d5db;
+        }
+
+
+        /* =========================
+           MAIN CONTENT
+           ========================= */
+
+        main {
+
+            /*
+                Main content has a white
+                newspaper-like appearance.
+            */
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: 40px auto;
+
+            padding: 40px;
+
+            background-color: white;
+
+            border: 1px solid #d1d5db;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.12);
+        }
+
+
+        /* =========================
+           MAIN HEADING
+           ========================= */
+
+        main h2 {
+
+            /*
+                column-span: all makes the
+                heading span across all
+                three columns.
+            */
+            column-span: all;
+
+            text-align: center;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 2.2rem;
+
+            font-weight: 800;
+
+            color: #991b1b;
+
+            margin-bottom: 25px;
+
+            padding-bottom: 15px;
+
+            border-bottom: 3px solid #991b1b;
+        }
+
+
+        /* =========================
+           ARTICLE COLUMN LAYOUT
+           ========================= */
+
+        .article-content {
+
+            /*
+                Creates three vertical
+                text columns.
+            */
+            column-count: 3;
+
+            /*
+                Space between columns.
+            */
+            column-gap: 35px;
+
+            /*
+                Vertical line between
+                newspaper columns.
+            */
+            column-rule: 1px solid #d1d5db;
+        }
+
+
+        /* =========================
+           PARAGRAPHS
+           ========================= */
+
+        .article-content p {
+
+            text-align: justify;
+
+            font-size: 1rem;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           IMAGE WITH FLOAT
+           ========================= */
+
+        .article-image {
+
+            /*
+                Aligns the image to the
+                left side of the text.
+            */
+            float: left;
+
+            width: 180px;
+
+            height: 120px;
+
+            object-fit: cover;
+
+            margin: 0 15px 10px 0;
+
+            border-radius: 5px;
+
+            border: 3px solid #374151;
+        }
+
+
+        /* =========================
+           SUBHEADING
+           ========================= */
+
+        .article-content h3 {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 1.3rem;
+
+            font-weight: 700;
+
+            color: #111827;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+
+            background-color: #111827;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 40px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+           ========================= */
+
+        @media (max-width: 900px) {
+
+            main {
+
+                width: 94%;
+
+                padding: 30px;
+            }
+
+            /*
+                Two columns on medium
+                sized screens.
+            */
+            .article-content {
+
+                column-count: 2;
+
+                column-gap: 30px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            header h1 {
+
+                font-size: 2rem;
+            }
+
+            main {
+
+                width: 95%;
+
+                padding: 20px;
+            }
+
+            /*
+                One column on small
+                mobile screens.
+            */
+            .article-content {
+
+                column-count: 1;
+
+                column-gap: 0;
+
+                column-rule: none;
+            }
+
+            main h2 {
+
+                font-size: 1.7rem;
+            }
+
+            .article-image {
+
+                width: 150px;
+
+                height: 100px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header>
+
+        <h1>THE DAILY TECH</h1>
+
+        <p>
+            Technology • Innovation • Future
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN NEWSPAPER CONTENT
+         ========================= -->
+
+    <main>
+
+        <h2>
+            Technology Is Changing the Modern World
+        </h2>
+
+
+        <div class="article-content">
+
+
+            <h3>
+                The Digital Revolution
+            </h3>
+
+
+            <!-- Image aligned using float -->
+
+            <img
+                class="article-image"
+                src="https://picsum.photos/id/1/500/300"
+                alt="Technology and computer"
+            >
+
+
+            <p>
+                Technology has become one of the most important
+                parts of modern society. Computers, smartphones,
+                cloud services and digital platforms have changed
+                how people communicate, work and learn. The digital
+                revolution continues to create new opportunities
+                across different industries.
+            </p>
+
+
+            <p>
+                The internet has made information available to
+                millions of people around the world. Students can
+                attend online classes, businesses can communicate
+                with customers and professionals can work from
+                almost anywhere. These changes have made modern
+                communication faster and more convenient.
+            </p>
+
+
+            <p>
+                Artificial intelligence is also becoming an
+                important part of everyday technology. AI systems
+                can analyze large amounts of information and help
+                people solve complex problems. Industries such as
+                healthcare, finance, education and transportation
+                are exploring new ways to use artificial intelligence.
+            </p>
+
+
+            <h3>
+                The Growth of Cloud Computing
+            </h3>
+
+
+            <p>
+                Cloud computing has changed the way organizations
+                store and manage information. Instead of depending
+                completely on physical hardware, companies can use
+                remote computing resources. This provides flexibility
+                and allows businesses to increase or decrease their
+                resources according to their requirements.
+            </p>
+
+
+            <p>
+                Cloud technology has also helped developers build
+                applications more quickly. Services for storage,
+                databases, networking and computing can be accessed
+                through cloud platforms. As a result, development
+                teams can focus more on building useful applications
+                rather than managing physical infrastructure.
+            </p>
+
+
+            <p>
+                Another important development is the Internet of
+                Things. Smart watches, smart home devices and
+                connected vehicles can communicate with networks
+                and exchange information. This technology can make
+                everyday tasks easier and provide useful information
+                to users.
+            </p>
+
+
+            <h3>
+                Looking Toward the Future
+            </h3>
+
+
+            <p>
+                The future of technology will bring both opportunities
+                and challenges. Cybersecurity and privacy will become
+                increasingly important as more personal and business
+                information moves online. Organizations will need
+                strong security practices to protect sensitive data.
+            </p>
+
+
+            <p>
+                Education will also play an important role in the
+                future. Students who understand programming, cloud
+                computing, artificial intelligence and cybersecurity
+                will have many opportunities in the technology
+                industry. Continuous learning will become an
+                important part of professional development.
+            </p>
+
+
+            <p>
+                Technology is not simply changing computers and
+                machines; it is changing the way society operates.
+                Responsible innovation, proper education and good
+                security practices can help ensure that technology
+                continues to create positive opportunities for
+                people around the world.
+            </p>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 The Daily Tech Magazine
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

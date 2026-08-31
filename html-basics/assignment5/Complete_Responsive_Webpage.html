@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modern Webpage</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+           ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+           ========================= */
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: #f8fafc;
+
+            color: #172033;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+
+            /*
+                Sticky keeps the header
+                at the top while scrolling.
+            */
+            position: sticky;
+
+            top: 0;
+
+            /*
+                Keeps the header above
+                other content.
+            */
+            z-index: 1000;
+
+            background-color: rgba(15, 23, 42, 0.95);
+
+            color: white;
+
+            padding: 18px 50px;
+
+            /*
+                Border demonstrates
+                the CSS Box Model.
+            */
+            border-bottom: 3px solid #38bdf8;
+
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+
+        nav {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        nav h1 {
+
+            font-size: 1.6rem;
+
+            color: #7dd3fc;
+        }
+
+
+        nav ul {
+
+            display: flex;
+
+            list-style: none;
+
+            gap: 25px;
+        }
+
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            padding: 8px 12px;
+
+            border-radius: 5px;
+
+            transition: background-color 0.3s ease;
+        }
+
+
+        nav a:hover {
+
+            background-color: rgba(56, 189, 248, 0.2);
+        }
+
+
+        /* =========================
+           HERO SECTION
+           ========================= */
+
+        .hero {
+
+            /*
+                Relative positioning allows
+                absolute elements to be
+                positioned inside it.
+            */
+            position: relative;
+
+            height: 80vh;
+
+            min-height: 500px;
+
+            /*
+                Large background image.
+            */
+            background-image:
+                linear-gradient(
+                    rgba(15, 23, 42, 0.65),
+                    rgba(15, 23, 42, 0.65)
+                ),
+                url("https://picsum.photos/id/180/1600/900");
+
+            background-size: cover;
+
+            background-position: center;
+
+            /*
+                Flexbox centers the
+                welcome content.
+            */
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+
+        /* =========================
+           HERO CONTENT
+           ========================= */
+
+        .hero-content {
+
+            padding: 40px;
+
+            /*
+                rgba creates a transparent
+                background.
+            */
+            background-color: rgba(0, 0, 0, 0.35);
+
+            border-radius: 15px;
+
+            /*
+                Outline demonstrates
+                the outline property.
+            */
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+
+            outline-offset: 8px;
+        }
+
+
+        .hero h2 {
+
+            font-size: 3.5rem;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hero p {
+
+            font-size: 1.2rem;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero-button {
+
+            display: inline-block;
+
+            background-color: #0ea5e9;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 25px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: background-color 0.3s ease;
+        }
+
+
+        .hero-button:hover {
+
+            background-color: #0284c7;
+        }
+
+
+        /* =========================
+           ABOUT SECTION
+           ========================= */
+
+        .about {
+
+            padding: 80px 8%;
+
+            background-color: white;
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            font-size: 2.5rem;
+
+            color: #0f172a;
+
+            margin-bottom: 45px;
+        }
+
+
+        .about-container {
+
+            /*
+                Two columns using flexbox.
+            */
+            display: flex;
+
+            align-items: center;
+
+            gap: 50px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        .about-text,
+        .about-image {
+
+            flex: 1;
+        }
+
+
+        .about-text h3 {
+
+            font-size: 1.8rem;
+
+            color: #0369a1;
+
+            margin-bottom: 20px;
+        }
+
+
+        .about-text p {
+
+            margin-bottom: 15px;
+
+            text-align: justify;
+        }
+
+
+        .about-image img {
+
+            width: 100%;
+
+            max-height: 350px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+
+            border: 4px solid #0ea5e9;
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================
+           SERVICES SECTION
+           ========================= */
+
+        .services {
+
+            padding: 80px 8%;
+
+            /*
+                Gradient background.
+            */
+            background:
+                linear-gradient(
+                    135deg,
+                    #e0f2fe,
+                    #f0f9ff
+                );
+        }
+
+
+        .services-container {
+
+            /*
+                Three boxes in a row.
+            */
+            display: flex;
+
+            gap: 25px;
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            align-items: stretch;
+        }
+
+
+        /* =========================
+           SERVICE BOX
+           ========================= */
+
+        .service-box {
+
+            flex: 1;
+
+            background-color: white;
+
+            padding: 35px;
+
+            /*
+                Border demonstrates
+                the Box Model.
+            */
+            border: 2px solid #bae6fd;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            /*
+                Shadow creates depth.
+            */
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.1);
+
+            /*
+                Relative positioning.
+            */
+            position: relative;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .service-box:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .service-box h3 {
+
+            color: #0369a1;
+
+            font-size: 1.5rem;
+
+            margin-bottom: 15px;
+        }
+
+
+        .service-box p {
+
+            color: #475569;
+        }
+
+
+        /* =========================
+           ABSOLUTE BADGE
+           ========================= */
+
+        .service-badge {
+
+            /*
+                Absolute positioning is
+                relative to .service-box.
+            */
+            position: absolute;
+
+            top: -12px;
+
+            right: 15px;
+
+            background-color: #f97316;
+
+            color: white;
+
+            padding: 5px 10px;
+
+            border-radius: 15px;
+
+            font-size: 0.75rem;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           CONTACT SECTION
+           ========================= */
+
+        .contact {
+
+            padding: 80px 8%;
+
+            background-color: #0f172a;
+
+            color: white;
+        }
+
+
+        .contact .section-title {
+
+            color: white;
+        }
+
+
+        .contact-form {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            background-color: rgba(255, 255, 255, 0.08);
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            border-radius: 12px;
+        }
+
+
+        .form-group {
+
+            margin-bottom: 20px;
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-weight: bold;
+        }
+
+
+        .form-group input,
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: 2px solid #475569;
+
+            border-radius: 7px;
+
+            background-color: rgba(255, 255, 255, 0.95);
+
+            color: #172033;
+
+            font-size: 1rem;
+        }
+
+
+        .form-group textarea {
+
+            min-height: 130px;
+
+            resize: vertical;
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+
+            outline: none;
+
+            border-color: #38bdf8;
+
+            box-shadow:
+                0 0 8px rgba(56, 189, 248, 0.4);
+        }
+
+
+        .submit-button {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background-color: #0ea5e9;
+
+            color: white;
+
+            font-size: 1rem;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .submit-button:hover {
+
+            background-color: #0284c7;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 25px;
+
+            background-color: #020617;
+
+            color: #cbd5e1;
+
+            border-top: 2px solid #1e293b;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+           ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+
+                padding: 15px 20px;
+            }
+
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+
+            nav ul {
+
+                gap: 10px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .hero {
+
+                height: 70vh;
+            }
+
+
+            .hero h2 {
+
+                font-size: 2.5rem;
+            }
+
+
+            /*
+                About columns become
+                one column.
+            */
+            .about-container {
+
+                flex-direction: column;
+            }
+
+
+            /*
+                Services stack vertically.
+            */
+            .services-container {
+
+                flex-direction: column;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero-content {
+
+                padding: 25px;
+            }
+
+
+            .hero h2 {
+
+                font-size: 2rem;
+            }
+
+
+            .hero p {
+
+                font-size: 1rem;
+            }
+
+
+            .about,
+            .services,
+            .contact {
+
+                padding: 60px 5%;
+            }
+
+
+            .section-title {
+
+                font-size: 2rem;
+            }
+
+
+            .contact-form {
+
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER + NAVIGATION
+         ========================= -->
+
+    <header>
+
+        <nav>
+
+            <h1>My Website</h1>
+
+            <ul>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO SECTION
+         ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h2>
+                Welcome to My Website
+            </h2>
+
+            <p>
+                Building modern and responsive web experiences
+            </p>
+
+            <a href="#about" class="hero-button">
+                Explore More
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT SECTION
+         ========================= -->
+
+    <section class="about" id="about">
+
+        <h2 class="section-title">
+            About Us
+        </h2>
+
+
+        <div class="about-container">
+
+
+            <!-- About Text -->
+
+            <div class="about-text">
+
+                <h3>
+                    Creating Digital Experiences
+                </h3>
+
+                <p>
+                    We focus on creating clean, modern and
+                    responsive websites that provide a great
+                    experience across different devices.
+                </p>
+
+                <p>
+                    Our approach combines creativity with
+                    technology to build websites that are
+                    attractive, functional and easy to use.
+                </p>
+
+            </div>
+
+
+            <!-- About Image -->
+
+            <div class="about-image">
+
+                <img
+                    src="https://picsum.photos/id/3/700/500"
+                    alt="Working on a computer"
+                >
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES SECTION
+         ========================= -->
+
+    <section class="services" id="services">
+
+        <h2 class="section-title">
+            Our Services
+        </h2>
+
+
+        <div class="services-container">
+
+
+            <!-- Service 1 -->
+
+            <article class="service-box">
+
+                <span class="service-badge">
+                    NEW
+                </span>
+
+                <h3>
+                    Web Design
+                </h3>
+
+                <p>
+                    We create modern and responsive website
+                    designs that work across different devices.
+                </p>
+
+            </article>
+
+
+            <!-- Service 2 -->
+
+            <article class="service-box">
+
+                <h3>
+                    Development
+                </h3>
+
+                <p>
+                    We build clean and efficient websites
+                    using modern web development techniques.
+                </p>
+
+            </article>
+
+
+            <!-- Service 3 -->
+
+            <article class="service-box">
+
+                <h3>
+                    Cloud Solutions
+                </h3>
+
+                <p>
+                    We provide scalable cloud-based solutions
+                    for modern applications and businesses.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT SECTION
+         ========================= -->
+
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Contact Us
+        </h2>
+
+
+        <form class="contact-form">
+
+
+            <div class="form-group">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-button"
+            >
+                Send Message
+            </button>
+
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 My Website. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

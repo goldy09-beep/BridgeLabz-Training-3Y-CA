@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Makes the webpage responsive on different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Team Members</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+           ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+           ========================= */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: #f1f5f9;
+
+            color: #172033;
+
+            /* Center the team section */
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            background-color: #1e3a8a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px;
+
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+        }
+
+
+        /* =========================
+           TEAM SECTION
+           ========================= */
+
+        .team-section {
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: 0 auto 50px;
+
+            text-align: center;
+        }
+
+        .team-section > h2 {
+            font-size: 2rem;
+
+            margin-bottom: 30px;
+
+            color: #1e3a8a;
+        }
+
+
+        /* =========================
+           TEAM CONTAINER
+           ========================= */
+
+        .team-container {
+
+            /*
+                Flexbox places the cards
+                in one row.
+            */
+            display: flex;
+
+            /*
+                Creates equal space
+                between the cards.
+            */
+            gap: 25px;
+
+            /*
+                Makes cards stretch
+                to the same height.
+            */
+            align-items: stretch;
+        }
+
+
+        /* =========================
+           TEAM CARD
+           ========================= */
+
+        .team-card {
+
+            /*
+                Each card gets equal width.
+            */
+            flex: 1;
+
+            /*
+                BOX MODEL:
+                Padding creates space
+                inside the card.
+            */
+            padding: 30px;
+
+            /*
+                Margin creates space
+                outside the card.
+            */
+            margin: 5px;
+
+            background-color: white;
+
+            /*
+                Border around the card.
+            */
+            border: 2px solid #cbd5e1;
+
+            /*
+                Rounded corners.
+            */
+            border-radius: 15px;
+
+            /*
+                Shadow effect.
+            */
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.15);
+
+            /*
+                Smooth transition when
+                hovering over the card.
+            */
+            transition: transform 0.3s ease;
+        }
+
+
+        /* =========================
+           CARD HOVER EFFECT
+           ========================= */
+
+        .team-card:hover {
+            transform: translateY(-8px);
+        }
+
+
+        /* =========================
+           PROFILE IMAGE
+           ========================= */
+
+        .team-card img {
+
+            width: 130px;
+
+            height: 130px;
+
+            /*
+                Makes the image circular.
+            */
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 4px solid #2563eb;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           CARD NAME
+           ========================= */
+
+        .team-card h3 {
+
+            font-size: 1.5rem;
+
+            margin-bottom: 10px;
+
+            color: #172554;
+        }
+
+
+        /* =========================
+           CARD ROLE
+           ========================= */
+
+        .team-card .role {
+
+            font-size: 1rem;
+
+            font-weight: bold;
+
+            color: #2563eb;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           CARD DESCRIPTION
+           ========================= */
+
+        .team-card p {
+
+            line-height: 1.7;
+
+            color: #475569;
+        }
+
+
+        /* =========================
+           TEAM LEAD CARD
+           ========================= */
+
+        .team-lead {
+
+            /*
+                Different background
+                for Team Lead.
+            */
+            background-color: #dbeafe;
+
+            /*
+                Different border style.
+            */
+            border: 3px dashed #2563eb;
+        }
+
+        .team-lead img {
+
+            border-color: #1d4ed8;
+        }
+
+        .team-lead h3 {
+
+            color: #1e3a8a;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 20px;
+
+            background-color: #1e3a8a;
+
+            color: white;
+
+            margin-top: 50px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+           ========================= */
+
+        /*
+            When screen width becomes
+            smaller than 600px, the
+            three cards become one column.
+        */
+
+        @media (max-width: 600px) {
+
+            .team-container {
+
+                /*
+                    Changes cards from
+                    horizontal row to
+                    vertical column.
+                */
+                flex-direction: column;
+            }
+
+            .team-card {
+
+                /*
+                    Cards take full width.
+                */
+                width: 100%;
+
+                margin: 0 0 20px 0;
+            }
+
+            header h1 {
+
+                font-size: 2rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header>
+
+        <h1>Meet Our Team</h1>
+
+        <p>
+            The people behind our success
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <main>
+
+        <section class="team-section">
+
+            <h2>Our Team Members</h2>
+
+
+            <!-- =========================
+                 TEAM CONTAINER
+                 ========================= -->
+
+            <div class="team-container">
+
+
+                <!-- =========================
+                     MEMBER 1
+                     ========================= -->
+
+                <article class="team-card">
+
+                    <img
+                        src="https://i.pravatar.cc/300?img=12"
+                        alt="Goldy Pandey"
+                    >
+
+                    <h3>Goldy Pandey</h3>
+
+                    <p class="role">
+                        Web Developer
+                    </p>
+
+                    <p>
+                        Goldy works on developing responsive websites
+                        and enjoys solving programming problems.
+                    </p>
+
+                </article>
+
+
+                <!-- =========================
+                     MEMBER 2 - TEAM LEAD
+                     ========================= -->
+
+                <article class="team-card team-lead">
+
+                    <img
+                        src="https://i.pravatar.cc/300?img=11"
+                        alt="Bhavya Raj"
+                    >
+
+                    <h3>Bhavya Raj</h3>
+
+                    <p class="role">
+                        Team Lead
+                    </p>
+
+                    <p>
+                        Bhavya leads the team, manages project tasks
+                        and coordinates team members to achieve goals.
+                    </p>
+
+                </article>
+
+
+                <!-- =========================
+                     MEMBER 3
+                     ========================= -->
+
+                <article class="team-card">
+
+                    <img
+                        src="https://i.pravatar.cc/300?img=47"
+                        alt="belly"
+                    >
+
+                    <h3>belly</h3>
+
+                    <p class="role">
+                        UI Designer
+                    </p>
+
+                    <p>
+                        belly creates clean and attractive user
+                        interfaces and focuses on improving user experience.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Our Team. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
