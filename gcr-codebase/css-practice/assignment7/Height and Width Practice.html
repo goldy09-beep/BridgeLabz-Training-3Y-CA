@@ -1,0 +1,140 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height and Width Practice</title>
+
+    <style>
+        /* Basic page styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        /* 
+           Flexbox is used to center all boxes
+           horizontally and vertically.
+        */
+        main {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Common styling for all boxes */
+        .box {
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* 
+           Box 1:
+           Width in pixels and height in vh.
+        */
+        .box1 {
+            width: 200px;
+            height: 30vh;
+            background-color: lightcoral;
+        }
+
+        /* 
+           Box 2:
+           Width in percentage and height in pixels.
+           max-width prevents the box from becoming too large.
+        */
+        .box2 {
+            width: 30%;
+            max-width: 300px;
+            height: 180px;
+            background-color: lightblue;
+        }
+
+        /* 
+           Box 3:
+           Width in em and height in percentage.
+           min-height ensures a minimum height.
+        */
+        .box3 {
+            width: 15em;
+            height: 25%;
+            min-height: 150px;
+            max-height: 200px;
+            background-color: lightgreen;
+
+            /* Extra content demonstrates overflow */
+            overflow: auto;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page header -->
+    <header>
+        <h1>Height and Width Practice Layout</h1>
+        <p>Different CSS units and size properties</p>
+    </header>
+
+    <main>
+
+        <!-- Box 1: px and vh -->
+        <section class="box box1">
+            <h2>Box 1</h2>
+            <p>Width: 200px</p>
+            <p>Height: 30vh</p>
+        </section>
+
+        <!-- Box 2: % and px -->
+        <section class="box box2">
+            <h2>Box 2</h2>
+            <p>Width: 30%</p>
+            <p>Height: 180px</p>
+            <p>Maximum width: 300px</p>
+        </section>
+
+        <!-- Box 3: em and overflow -->
+        <section class="box box3">
+            <h2>Box 3</h2>
+            <p>Width: 15em</p>
+            <p>Minimum height: 150px</p>
+            <p>
+                This box contains extra content to demonstrate
+                the overflow property. If the content becomes
+                larger than the available space, a scrollbar
+                will appear because overflow is set to auto.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Height and Width Practice using CSS</p>
+    </footer>
+
+</body>
+</html>
+```

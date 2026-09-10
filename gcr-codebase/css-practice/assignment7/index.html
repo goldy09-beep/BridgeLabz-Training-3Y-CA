@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borders and Padding</title>
+
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f2f2f2;
+            color: #222;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 25px;
+        }
+
+        /* Main content */
+        main {
+            padding: 30px;
+        }
+
+        /* Flexbox to arrange boxes horizontally */
+        .boxes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Common box styling */
+        .box {
+            width: 180px;
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+
+            /* Smooth hover effect */
+            transition: border-color 0.3s ease;
+        }
+
+        /* Different border styles */
+        .solid {
+            border: 5px solid black;
+        }
+
+        .dashed {
+            border: 5px dashed black;
+        }
+
+        .double {
+            border: 5px double black;
+        }
+
+        .groove {
+            border: 5px groove black;
+        }
+
+        /* Hover effect */
+        .box:hover {
+            border-color: red;
+        }
+
+        /* Padding section */
+        .padding-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .padding-box {
+            display: inline-block;
+            margin: 10px;
+            border: 2px solid black;
+            background-color: white;
+        }
+
+        /* Different padding values */
+        .small {
+            padding: 10px;
+        }
+
+        .medium {
+            padding: 25px;
+        }
+
+        .large {
+            padding: 40px;
+        }
+
+        /* Rounded corners */
+        .rounded-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .rounded-box {
+            display: inline-block;
+            padding: 30px;
+            background-color: white;
+            border: 4px solid black;
+            border-radius: 25px;
+
+            transition: border-color 0.3s ease;
+        }
+
+        .rounded-box:hover {
+            border-color: red;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Borders and Padding Demonstration</h1>
+        <p>Different border styles, padding and rounded corners</p>
+    </header>
+
+    <main>
+
+        <!-- Border Examples -->
+        <section>
+            <h2>Different Border Styles</h2>
+
+            <div class="boxes">
+
+                <div class="box solid">
+                    <h3>Solid</h3>
+                    <p>Solid border</p>
+                </div>
+
+                <div class="box dashed">
+                    <h3>Dashed</h3>
+                    <p>Dashed border</p>
+                </div>
+
+                <div class="box double">
+                    <h3>Double</h3>
+                    <p>Double border</p>
+                </div>
+
+                <div class="box groove">
+                    <h3>Groove</h3>
+                    <p>Groove border</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Padding Examples -->
+        <section class="padding-section">
+            <h2>Different Padding Values</h2>
+
+            <div class="padding-box small">
+                Small Padding
+            </div>
+
+            <div class="padding-box medium">
+                Medium Padding
+            </div>
+
+            <div class="padding-box large">
+                Large Padding
+            </div>
+        </section>
+
+        <!-- Rounded Corner Example -->
+        <section class="rounded-section">
+            <h2>Rounded Corners</h2>
+
+            <div class="rounded-box">
+                Border Radius Example
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>HTML5 & CSS3 Borders and Padding</p>
+    </footer>
+
+</body>
+</html>

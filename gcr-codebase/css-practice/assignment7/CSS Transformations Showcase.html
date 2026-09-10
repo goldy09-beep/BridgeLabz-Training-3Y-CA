@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transformations Showcase</title>
+
+    <style>
+        /* Basic page styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        /* Arrange all boxes horizontally */
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        /* Each box and label */
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Common box styling */
+        .box {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: steelblue;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+
+            /* Smooth transformation */
+            transition: all 0.4s ease;
+        }
+
+        /* Rotate transformation */
+        .rotate:hover {
+            transform: rotate(45deg);
+        }
+
+        /* Scale transformation */
+        .scale:hover {
+            transform: scale(1.3);
+        }
+
+        /* Translate transformation */
+        .translate:hover {
+            transform: translateY(-30px);
+        }
+
+        /* Skew transformation */
+        .skew:hover {
+            transform: skew(20deg);
+        }
+
+        /* Labels under the boxes */
+        .label {
+            margin-top: 30px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Transformations Showcase</h1>
+
+    <main class="container">
+
+        <!-- Rotate -->
+        <div class="item">
+            <div class="box rotate">
+                Rotate
+            </div>
+            <p class="label">rotate()</p>
+        </div>
+
+        <!-- Scale -->
+        <div class="item">
+            <div class="box scale">
+                Scale
+            </div>
+            <p class="label">scale()</p>
+        </div>
+
+        <!-- Translate -->
+        <div class="item">
+            <div class="box translate">
+                Translate
+            </div>
+            <p class="label">translate()</p>
+        </div>
+
+        <!-- Skew -->
+        <div class="item">
+            <div class="box skew">
+                Skew
+            </div>
+            <p class="label">skew()</p>
+        </div>
+
+    </main>
+
+</body>
+</html>

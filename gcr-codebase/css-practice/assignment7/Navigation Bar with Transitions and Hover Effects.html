@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Navigation Bar</title>
+
+    <style>
+
+        /* Basic page styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        /* Navigation links */
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            margin: 5px;
+            border: 1px solid #555;
+            border-radius: 5px;
+
+            /* Smooth hover transition */
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect */
+        nav a:hover {
+            background-color: #3498db;
+            border-color: #3498db;
+        }
+
+        /* Active link */
+        nav a.active {
+            background-color: #27ae60;
+            border-color: #27ae60;
+        }
+
+        /* Main content */
+        main {
+            min-height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive navbar */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            nav a {
+                text-align: center;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <div class="content">
+            <h1>Welcome to My Website</h1>
+            <p>
+                This page demonstrates a responsive navigation bar
+                with hover effects and smooth transitions.
+            </p>
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 My Website | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Box Model Exploration</title>
+
+    <style>
+
+        /* Basic page styling */
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Center the demonstration using Flexbox */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        /* Box Model Demonstration */
+        .box-model {
+            width: 300px;
+
+            /* Margin layer */
+            margin: 30px;
+
+            /* Border layer */
+            border: 15px solid #e67e22;
+
+            /* Padding layer */
+            padding: 30px;
+
+            /* Content */
+            background-color: #bde0fe;
+
+            outline: 5px dashed #8e44ad;
+        }
+
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 2px solid #3498db;
+        }
+
+        .content h2 {
+            margin-top: 0;
+        }
+
+        /* Explanation boxes */
+        .description {
+            width: 300px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .description h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .description p {
+            line-height: 1.6;
+        }
+
+        /* Demonstrating content-box */
+        .default-box {
+            width: 200px;
+            padding: 20px;
+            border: 10px solid #3498db;
+            background-color: #d6eaf8;
+            box-sizing: content-box;
+        }
+
+        /* Demonstrating border-box */
+        .border-box {
+            width: 200px;
+            padding: 20px;
+            border: 10px solid #27ae60;
+            background-color: #d5f5e3;
+            box-sizing: border-box;
+        }
+
+        .comparison {
+            margin-top: 40px;
+        }
+
+        .comparison-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .comparison-box {
+            text-align: left;
+        }
+
+        .comparison-box h3 {
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 40px;
+            color: #666;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Box Model Exploration</h1>
+        <p class="intro">
+            Every HTML element is made up of content, padding, border and margin.
+        </p>
+    </header>
+
+    <main>
+
+        <!-- Main Box Model Demonstration -->
+        <section class="container">
+
+            <div class="box-model">
+
+                <!-- Content Layer -->
+                <div class="content">
+                    <h2>Content</h2>
+                    <p>
+                        This is the actual content of the element.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Description of each layer -->
+            <div class="description">
+
+                <h2>Box Model Parts</h2>
+
+                <p>
+                    <strong>Content:</strong>
+                    The actual text or information inside an element.
+                </p>
+
+                <p>
+                    <strong>Padding:</strong>
+                    Space between the content and the border.
+                </p>
+
+                <p>
+                    <strong>Border:</strong>
+                    A line surrounding the padding and content.
+                </p>
+
+                <p>
+                    <strong>Margin:</strong>
+                    Space outside the border that separates elements.
+                </p>
+
+                <p>
+                    <strong>Outline:</strong>
+                    An extra line outside the element, shown as a dashed line.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Box-sizing Comparison -->
+        <section class="comparison">
+
+            <h2>Box-Sizing Comparison</h2>
+
+            <p>
+                The two boxes below have the same width, but their sizing behaves differently.
+            </p>
+
+            <div class="comparison-container">
+
+                <!-- Default content-box -->
+                <div class="comparison-box">
+                    <h3>Default: content-box</h3>
+
+                    <div class="default-box">
+                        Width = 200px<br>
+                        Padding = 20px<br>
+                        Border = 10px
+                    </div>
+                </div>
+
+                <!-- border-box -->
+                <div class="comparison-box">
+                    <h3>box-sizing: border-box</h3>
+
+                    <div class="border-box">
+                        Width = 200px<br>
+                        Padding = 20px<br>
+                        Border = 10px
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Box Model Exploration Page
+    </footer>
+
+</body>
+</html>
