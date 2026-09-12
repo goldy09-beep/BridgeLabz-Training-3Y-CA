@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Box-Sizing Comparison</title>
+
+    <style>
+        /* Reset default spacing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background-color: #f2f4f7;
+
+            /* Center content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main card */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            padding: 40px;
+
+            background-color: white;
+            border-radius: 15px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        /* Boxes container */
+        .boxes {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+        }
+
+        /* Common box styling */
+        .box {
+            width: 300px;
+            padding: 30px;
+            border: 10px solid #333;
+
+            border-radius: 10px;
+            min-height: 200px;
+        }
+
+        /* Default box-sizing */
+        .content-box {
+            box-sizing: content-box;
+            background-color: #bfdbfe;
+        }
+
+        /* Border-box */
+        .border-box {
+            box-sizing: border-box;
+            background-color: #fecaca;
+        }
+
+        .box h2 {
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .box p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Explanation section */
+        .info {
+            margin-top: 35px;
+            padding: 20px;
+
+            background-color: #f8fafc;
+            border-radius: 10px;
+        }
+
+        .info h2 {
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .info p {
+            margin: 8px 0;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Highlight important terms */
+        strong {
+            color: #111827;
+        }
+
+        /* Responsive design */
+        @media (max-width: 700px) {
+
+            .container {
+                padding: 25px;
+            }
+
+            .boxes {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Box-Sizing Comparison</h1>
+
+        <p class="description">
+            Comparing the default content-box with border-box.
+        </p>
+
+        <!-- Two boxes side by side -->
+        <section class="boxes">
+
+            <!-- Default content-box -->
+            <div class="box content-box">
+
+                <h2>Content-Box</h2>
+
+                <p>
+                    This is the default box-sizing value.
+                    The width applies only to the content.
+                    Padding and border are added outside the given width.
+                </p>
+
+            </div>
+
+            <!-- Border-box -->
+            <div class="box border-box">
+
+                <h2>Border-Box</h2>
+
+                <p>
+                    With border-box, the given width includes
+                    the content, padding, and border.
+                    This makes the total size easier to control.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Explanation -->
+        <section class="info">
+
+            <h2>How Box-Sizing Works</h2>
+
+            <p>
+                <strong>content-box:</strong>
+                The specified width is only the width of the content.
+                Padding and border are added to the total size.
+            </p>
+
+            <p>
+                <strong>border-box:</strong>
+                The specified width includes the content, padding,
+                and border, so the total size remains equal to the
+                specified width.
+            </p>
+
+            <p>
+                Both boxes have the same width, padding, and border,
+                but their total sizes are different because of
+                the box-sizing property.
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

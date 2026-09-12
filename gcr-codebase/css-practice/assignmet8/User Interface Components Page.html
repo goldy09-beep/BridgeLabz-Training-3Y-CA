@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UI Components Page</title>
+
+    <style>
+        /* Reset default spacing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Soft background gradient */
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+
+            background: linear-gradient(135deg, #dbeafe, #f5d0fe);
+
+            /* Center the card horizontally and vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main card-like container */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 40px;
+
+            background-color: white;
+            border-radius: 15px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* UI components container */
+        .components {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* =========================
+           SEARCH BAR
+           ========================= */
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-input {
+            width: 230px;
+            padding: 12px 15px;
+
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            /* Smooth focus effect */
+            transition: 0.3s ease;
+        }
+
+        /* Search input focus */
+        .search-input:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        /* =========================
+           BUTTON
+           ========================= */
+
+        .btn {
+            padding: 12px 22px;
+
+            border: none;
+            border-radius: 8px;
+
+            background-color: #6366f1;
+            color: white;
+
+            font-size: 15px;
+            cursor: pointer;
+
+            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+
+            transition: 0.3s ease;
+        }
+
+        /* Button hover */
+        .btn:hover {
+            background-color: #4f46e5;
+            transform: translateY(-2px);
+        }
+
+        /* Button active */
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+
+        /* Button focus */
+        .btn:focus {
+            outline: 3px solid #fbbf24;
+            outline-offset: 2px;
+        }
+
+        /* =========================
+           DROPDOWN
+           ========================= */
+
+        .dropdown {
+            padding: 12px 15px;
+
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+
+            background-color: white;
+
+            font-size: 15px;
+            cursor: pointer;
+
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s ease;
+        }
+
+        /* Dropdown hover */
+        .dropdown:hover {
+            border-color: #6366f1;
+        }
+
+        /* Dropdown focus */
+        .dropdown:focus {
+            outline: none;
+            border-color: #6366f1;
+
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Information section */
+        .info {
+            margin-top: 35px;
+            padding: 20px;
+
+            background-color: #f8fafc;
+            border-radius: 10px;
+        }
+
+        .info h2 {
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .info p {
+            color: #555;
+            margin: 8px 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 25px;
+            }
+
+            .components {
+                flex-direction: column;
+            }
+
+            .search-box {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+
+            .btn,
+            .dropdown {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>User Interface Components</h1>
+
+        <p class="description">
+            A simple UI demonstrating a search bar, button and dropdown menu.
+        </p>
+
+        <!-- UI components aligned using Flexbox -->
+        <section class="components">
+
+            <!-- Search bar -->
+            <div class="search-box">
+                <input
+                    type="text"
+                    class="search-input"
+                    placeholder="Search here..."
+                >
+
+                <button class="btn">
+                    Search
+                </button>
+            </div>
+
+            <!-- Dropdown menu -->
+            <select class="dropdown">
+                <option value="">Select Category</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="cloud">Cloud Computing</option>
+            </select>
+
+        </section>
+
+        <!-- Explanation -->
+        <section class="info">
+
+            <h2>Features Used</h2>
+
+            <p>
+                <strong>Flexbox:</strong>
+                Aligns the search bar, button and dropdown.
+            </p>
+
+            <p>
+                <strong>:hover:</strong>
+                Changes the appearance when the mouse moves over an element.
+            </p>
+
+            <p>
+                <strong>:focus:</strong>
+                Highlights the input, button and dropdown when focused.
+            </p>
+
+            <p>
+                <strong>Gradient:</strong>
+                Creates a soft background for the interface.
+            </p>
+
+            <p>
+                <strong>Box Shadow:</strong>
+                Gives the components and card a slightly elevated appearance.
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

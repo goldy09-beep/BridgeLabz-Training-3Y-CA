@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Animation Demonstration</title>
+
+    <style>
+        /* Remove default spacing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            min-height: 100vh;
+
+            /* Center everything horizontally and vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main container */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        /* Heading */
+        h1 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .description {
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        /* Animation area */
+        .animation-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        /* Each animation box */
+        .animation-box {
+            width: 220px;
+            height: 180px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #fafafa;
+            overflow: hidden;
+        }
+
+        /* ===================================
+           1. MOVING BOX ANIMATION
+           =================================== */
+
+        .moving-box {
+            width: 50px;
+            height: 50px;
+            background-color: #2563eb;
+            border-radius: 8px;
+
+            /* Animation properties */
+            animation-name: moveBox;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        /* Define moving animation */
+        @keyframes moveBox {
+            from {
+                transform: translateX(-70px);
+            }
+
+            to {
+                transform: translateX(70px);
+            }
+        }
+
+
+        /* ===================================
+           2. BOUNCING BALL ANIMATION
+           =================================== */
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: #ef4444;
+            border-radius: 50%;
+
+            /* Animation properties */
+            animation-name: bounce;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 3;
+            animation-direction: alternate;
+            animation-delay: 0.5s;
+        }
+
+        /* Define bouncing animation */
+        @keyframes bounce {
+            from {
+                transform: translateY(-50px);
+            }
+
+            to {
+                transform: translateY(50px);
+            }
+        }
+
+
+        /* ===================================
+           3. COLOR CHANGING TEXT
+           =================================== */
+
+        .color-text {
+            font-size: 24px;
+            font-weight: bold;
+
+            /* Animation properties */
+            animation-name: colorChange;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        /* Define color-changing animation */
+        @keyframes colorChange {
+            0% {
+                color: #2563eb;
+            }
+
+            50% {
+                color: #16a34a;
+            }
+
+            100% {
+                color: #dc2626;
+            }
+        }
+
+
+        /* Information section */
+        .info {
+            margin-top: 35px;
+            padding: 20px;
+            background-color: #f8fafc;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .info h2 {
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .info p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+
+        /* Responsive design */
+        @media (max-width: 700px) {
+
+            .container {
+                padding: 25px;
+            }
+
+            .animation-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>CSS Animation Demonstration</h1>
+
+        <p class="description">
+            Examples of different CSS animations using @keyframes.
+        </p>
+
+        <!-- Animation elements -->
+        <section class="animation-container">
+
+            <!-- Moving Box -->
+            <div class="animation-box">
+                <div class="moving-box"></div>
+            </div>
+
+            <!-- Bouncing Ball -->
+            <div class="animation-box">
+                <div class="ball"></div>
+            </div>
+
+            <!-- Color Changing Text -->
+            <div class="animation-box">
+                <div class="color-text">
+                    CSS Animation
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Explanation -->
+        <section class="info">
+
+            <h2>Animation Properties Used</h2>
+
+            <p>
+                <strong>@keyframes:</strong>
+                Defines the different stages of an animation.
+            </p>
+
+            <p>
+                <strong>animation-delay:</strong>
+                Delays the start of an animation.
+            </p>
+
+            <p>
+                <strong>animation-iteration-count:</strong>
+                Defines how many times the animation runs.
+            </p>
+
+            <p>
+                <strong>animation-direction:</strong>
+                Controls the direction of the animation.
+            </p>
+
+            <p>
+                <strong>ease-in-out:</strong>
+                Makes the animation start and end smoothly.
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

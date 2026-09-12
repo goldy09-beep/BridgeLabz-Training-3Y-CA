@@ -1,0 +1,371 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Selectors Practice</title>
+
+    <style>
+
+        /* =========================
+           BASIC PAGE STYLING
+           ========================= */
+
+        /* Element selector: styles all body elements */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Element selector: styles the main heading */
+        h1 {
+            text-align: center;
+            color: white;
+            margin: 0;
+        }
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            background-color: #1f2937;
+            padding: 30px;
+        }
+
+        /* =========================
+           MAIN CONTENT
+           ========================= */
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* =========================
+           CLASS SELECTOR
+           ========================= */
+
+        /* Class selector: styles elements having class="highlight" */
+        .highlight {
+            background-color: #fef3c7;
+            padding: 10px;
+            border-left: 5px solid #f59e0b;
+        }
+
+
+        /* =========================
+           ID SELECTOR
+           ========================= */
+
+        /* ID selector: styles the element having id="special" */
+        #special {
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           ATTRIBUTE SELECTOR
+           ========================= */
+
+        /* Attribute selector: selects links with target="_blank" */
+        a[target="_blank"] {
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           DESCENDANT COMBINATOR
+           ========================= */
+
+        /* Descendant selector:
+           selects all paragraphs inside .content */
+        .content p {
+            line-height: 1.7;
+            color: #444;
+        }
+
+
+        /* =========================
+           CHILD COMBINATOR (>)
+           ========================= */
+
+        /* Selects only direct li children of .items */
+        .items > li {
+            padding: 10px;
+            margin: 5px;
+            background-color: #dbeafe;
+        }
+
+
+        /* =========================
+           ADJACENT SIBLING COMBINATOR (+)
+           ========================= */
+
+        /* Selects the paragraph immediately after h2 */
+        h2 + p {
+            color: #16a34a;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           GENERAL SIBLING COMBINATOR (~)
+           ========================= */
+
+        /* Selects all paragraphs after h3
+           that share the same parent */
+        h3 ~ p {
+            background-color: #ecfdf5;
+            padding: 8px;
+        }
+
+
+        /* =========================
+           LIST STYLING
+           ========================= */
+
+        .items {
+            padding-left: 20px;
+        }
+
+        .items ul {
+            margin-top: 10px;
+        }
+
+        .items ul li {
+            margin: 5px;
+        }
+
+
+        /* =========================
+           LINK STYLING
+           ========================= */
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            main {
+                margin: 15px;
+                padding: 10px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header>
+        <h1>CSS Selectors Practice Page</h1>
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <main>
+
+        <!-- Element Selector -->
+        <section>
+
+            <h2>1. Element Selector</h2>
+
+            <p>
+                This paragraph is styled using the
+                <strong>element selector</strong>.
+            </p>
+
+            <p>
+                The CSS selector <strong>p</strong> selects
+                all paragraph elements.
+            </p>
+
+        </section>
+
+
+        <!-- Class Selector -->
+        <section>
+
+            <h2>2. Class Selector</h2>
+
+            <p class="highlight">
+                This paragraph uses the
+                <strong>class selector</strong>.
+            </p>
+
+            <p>
+                The class selector uses a dot
+                such as <strong>.highlight</strong>.
+            </p>
+
+        </section>
+
+
+        <!-- ID Selector -->
+        <section>
+
+            <h2>3. ID Selector</h2>
+
+            <p id="special">
+                This paragraph uses the ID selector.
+            </p>
+
+            <p>
+                The ID selector uses the
+                <strong>#</strong> symbol.
+            </p>
+
+        </section>
+
+
+        <!-- Attribute Selector -->
+        <section>
+
+            <h2>4. Attribute Selector</h2>
+
+            <p>
+                The following link has a
+                <strong>target="_blank"</strong> attribute:
+            </p>
+
+            <a href="https://www.google.com" target="_blank">
+                Open Google
+            </a>
+
+        </section>
+
+
+        <!-- Combinators -->
+        <section class="content">
+
+            <h2>5. Combinators</h2>
+
+            <!-- Descendant Combinator -->
+            <h3>Descendant Selector</h3>
+
+            <p>
+                This paragraph is inside the content section.
+                It is selected using the descendant selector.
+            </p>
+
+
+            <!-- Child Combinator -->
+            <h3>Child Selector (>)</h3>
+
+            <ul class="items">
+
+                <!-- Direct child of ul -->
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Java</li>
+
+                <!-- Nested list -->
+                <li>
+                    Cloud Computing
+
+                    <ul>
+                        <li>AWS</li>
+                        <li>Azure</li>
+                    </ul>
+
+                </li>
+
+            </ul>
+
+
+            <!-- Adjacent Sibling -->
+            <h3>Adjacent Sibling (+)</h3>
+
+            <p>
+                This paragraph comes immediately after the h3.
+            </p>
+
+            <p>
+                This paragraph does not come immediately after h3.
+            </p>
+
+
+            <!-- General Sibling -->
+            <h3>General Sibling (~)</h3>
+
+            <p>
+                This is a paragraph after the h3.
+            </p>
+
+            <p>
+                This is another paragraph after the h3.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+        <p>CSS Selectors Practice | HTML5 & CSS3</p>
+    </footer>
+
+</body>
+
+</html>
+```

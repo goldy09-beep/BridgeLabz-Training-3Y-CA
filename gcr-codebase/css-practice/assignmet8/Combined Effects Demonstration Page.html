@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Combined Effects Demonstration</title>
+
+    <style>
+
+        /* ------------------------------
+           Basic Page Styling
+        ------------------------------ */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #f3e8ff);
+            min-height: 100vh;
+
+            /* Center the complete page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+
+        /* ------------------------------
+           Main Container
+        ------------------------------ */
+
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 1000px;
+
+            padding: 40px;
+            border-radius: 15px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+            text-align: center;
+        }
+
+
+        /* Heading */
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+
+        /* ------------------------------
+           Flexbox Container
+        ------------------------------ */
+
+        .examples {
+            display: flex;
+
+            justify-content: space-evenly;
+            align-items: stretch;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* ------------------------------
+           Example Cards
+        ------------------------------ */
+
+        .card {
+            width: 250px;
+
+            padding: 25px;
+
+            background-color: #f8fafc;
+
+            border-radius: 12px;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+
+            /* Smooth transition */
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        /* Card Hover
+           Pseudo-class + Transformation + Shadow */
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+
+            background-color: #ffffff;
+        }
+
+
+        .card h2 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+
+        /* ------------------------------
+           Button Styling
+        ------------------------------ */
+
+        .btn {
+            padding: 12px 25px;
+
+            border: none;
+            border-radius: 8px;
+
+            font-size: 16px;
+            cursor: pointer;
+
+            color: white;
+
+            background-color: #2563eb;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+            /* Smooth transition */
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        /* ------------------------------
+           Hover Effect
+           Pseudo-class + Transform
+        ------------------------------ */
+
+        .btn:hover {
+            background-color: #1d4ed8;
+
+            /* Button grows slightly */
+            transform: scale(1.08);
+
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.20);
+        }
+
+
+        /* ------------------------------
+           Active Effect
+        ------------------------------ */
+
+        .btn:active {
+            transform: scale(0.95);
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* ------------------------------
+           Focus Effect
+        ------------------------------ */
+
+        .btn:focus {
+            outline: 3px solid #93c5fd;
+            outline-offset: 3px;
+        }
+
+
+        /* ------------------------------
+           Different Button
+        ------------------------------ */
+
+        .green-btn {
+            background-color: #16a34a;
+        }
+
+        .green-btn:hover {
+            background-color: #15803d;
+            transform: scale(1.08) rotate(2deg);
+        }
+
+
+        /* ------------------------------
+           Rotate Example
+        ------------------------------ */
+
+        .rotate-box {
+            display: inline-block;
+
+            padding: 12px 20px;
+
+            background-color: #9333ea;
+            color: white;
+
+            border-radius: 8px;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        .rotate-box:hover {
+            transform: rotate(5deg) scale(1.08);
+
+            background-color: #7e22ce;
+
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.20);
+        }
+
+
+        /* ------------------------------
+           Information Section
+        ------------------------------ */
+
+        .info {
+            margin-top: 35px;
+
+            padding: 20px;
+
+            background-color: #f1f5f9;
+
+            border-radius: 10px;
+
+            text-align: left;
+        }
+
+        .info h2 {
+            margin-bottom: 10px;
+        }
+
+        .info ul {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+
+        /* ------------------------------
+           Responsive Design
+        ------------------------------ */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            .examples {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <main class="container">
+
+        <h1>Combined CSS Effects</h1>
+
+        <p class="intro">
+            Hover over the examples to see pseudo-classes,
+            transitions, transformations and shadows working together.
+        </p>
+
+
+        <!-- Flexbox Examples -->
+
+        <section class="examples">
+
+            <!-- Example 1 -->
+            <article class="card">
+
+                <h2>Grow Button</h2>
+
+                <p>
+                    The button grows and changes color when
+                    the mouse pointer moves over it.
+                </p>
+
+                <button class="btn">
+                    Hover Me
+                </button>
+
+            </article>
+
+
+            <!-- Example 2 -->
+            <article class="card">
+
+                <h2>Green Button</h2>
+
+                <p>
+                    This button uses scaling and a small
+                    rotation effect on hover.
+                </p>
+
+                <button class="btn green-btn">
+                    Hover Me
+                </button>
+
+            </article>
+
+
+            <!-- Example 3 -->
+            <article class="card">
+
+                <h2>Rotate Box</h2>
+
+                <p>
+                    Hover over the box to see scaling,
+                    rotation and shadow effects.
+                </p>
+
+                <span class="rotate-box">
+                    Rotate Me
+                </span>
+
+            </article>
+
+        </section>
+
+
+        <!-- Explanation -->
+
+        <section class="info">
+
+            <h2>Effects Used</h2>
+
+            <ul>
+                <li><strong>:hover</strong> changes the style when the mouse is over an element.</li>
+
+                <li><strong>:active</strong> applies an effect while the button is being clicked.</li>
+
+                <li><strong>:focus</strong> highlights the button when it receives focus.</li>
+
+                <li><strong>transition</strong> makes changes smooth instead of sudden.</li>
+
+                <li><strong>transform</strong> is used for scale, rotate and move effects.</li>
+
+                <li><strong>box-shadow</strong> gives the elements a subtle depth effect.</li>
+
+                <li><strong>Flexbox</strong> distributes the examples evenly across the page.</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

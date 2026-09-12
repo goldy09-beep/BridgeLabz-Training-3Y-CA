@@ -1,0 +1,213 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tooltip Demonstration</title>
+
+    <style>
+
+        /* Remove default spacing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            color: #222;
+            min-height: 100vh;
+
+            /* Center content using Flexbox */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main container */
+        main {
+            text-align: center;
+            width: 100%;
+            padding: 30px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+
+        .description {
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        /* Flexbox for all tooltip examples */
+        .tooltip-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        /* Individual tooltip element */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+
+            padding: 15px 25px;
+
+            background-color: #2563eb;
+            color: white;
+
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Tooltip text */
+        .tooltip-text {
+            position: absolute;
+
+            /* Position tooltip above the element */
+            bottom: 130%;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background-color: #222;
+            color: white;
+
+            padding: 10px 14px;
+
+            border-radius: 6px;
+
+            white-space: nowrap;
+
+            /* Hidden initially */
+            opacity: 0;
+
+            /* Smooth fade-in transition */
+            transition: 0.3s ease-in-out;
+
+            pointer-events: none;
+        }
+
+        /* Small arrow below tooltip */
+        .tooltip-text::after {
+            content: "";
+
+            position: absolute;
+
+            top: 100%;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            border-width: 6px;
+            border-style: solid;
+            border-color: #222 transparent transparent transparent;
+        }
+
+        /* Show tooltip when hovering */
+        .tooltip:hover .tooltip-text {
+            opacity: 1;
+        }
+
+        /* Different element styles */
+        .home {
+            background-color: #16a34a;
+        }
+
+        .info {
+            background-color: #7c3aed;
+        }
+
+        .email {
+            background-color: #dc2626;
+        }
+
+        .settings {
+            background-color: #ea580c;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+
+            .tooltip-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .tooltip {
+                width: 180px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Content -->
+    <main>
+
+        <h1>Tooltip Demonstration</h1>
+
+        <p class="description">
+            Hover over each element to see the tooltip.
+        </p>
+
+        <!-- Tooltip Examples -->
+        <section class="tooltip-container">
+
+            <!-- Home Tooltip -->
+            <div class="tooltip home">
+                Home
+
+                <span class="tooltip-text">
+                    Go to Home Page
+                </span>
+            </div>
+
+            <!-- Information Tooltip -->
+            <div class="tooltip info">
+                Information
+
+                <span class="tooltip-text">
+                    View More Information
+                </span>
+            </div>
+
+            <!-- Email Tooltip -->
+            <div class="tooltip email">
+                Email
+
+                <span class="tooltip-text">
+                    Send an Email
+                </span>
+            </div>
+
+            <!-- Settings Tooltip -->
+            <div class="tooltip settings">
+                Settings
+
+                <span class="tooltip-text">
+                    Open Settings
+                </span>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+```

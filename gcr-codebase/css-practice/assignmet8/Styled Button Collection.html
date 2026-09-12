@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Styled Button Collection</title>
+
+    <style>
+        /* Basic page styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            min-height: 100vh;
+
+            /* Center the content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main container */
+        .container {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        /* Heading */
+        h1 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .description {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Flexbox button container */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Common button styling */
+        .btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* ---------------- PRIMARY BUTTON ---------------- */
+
+        .primary {
+            background-color: #2563eb;
+            color: white;
+            border: 2px solid #2563eb;
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Hover effect */
+        .primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Active effect */
+        .primary:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+
+        /* ---------------- SECONDARY BUTTON ---------------- */
+
+        .secondary {
+            background-color: #6b7280;
+            color: white;
+            border: 2px solid #6b7280;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hover effect */
+        .secondary:hover {
+            background-color: #4b5563;
+            transform: translateY(-2px);
+        }
+
+        /* Active effect */
+        .secondary:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+
+        /* ---------------- OUTLINE BUTTON ---------------- */
+
+        .outline {
+            background-color: transparent;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+        }
+
+        /* Hover effect */
+        .outline:hover {
+            background-color: #2563eb;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Active effect */
+        .outline:active {
+            transform: translateY(2px);
+        }
+
+        /* ---------------- FOCUS PSEUDO-CLASS ---------------- */
+
+        .btn:focus {
+            outline: 3px solid #f59e0b;
+            outline-offset: 3px;
+        }
+
+        /* ---------------- DISABLED BUTTON ---------------- */
+
+        .disabled {
+            background-color: #d1d5db;
+            color: #6b7280;
+            border: 2px solid #d1d5db;
+            cursor: not-allowed;
+        }
+
+        /* Disabled pseudo-class */
+        .disabled:disabled {
+            opacity: 0.7;
+            box-shadow: none;
+        }
+
+        /* Explanation section */
+        .info {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .info h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .info p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 25px;
+            }
+
+            .button-container {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Styled Button Collection</h1>
+
+        <p class="description">
+            Different button styles using CSS pseudo-classes and transitions.
+        </p>
+
+        <!-- Buttons aligned using Flexbox -->
+        <section class="button-container">
+
+            <!-- Primary Button -->
+            <button class="btn primary">
+                Primary
+            </button>
+
+            <!-- Secondary Button -->
+            <button class="btn secondary">
+                Secondary
+            </button>
+
+            <!-- Outline Button -->
+            <button class="btn outline">
+                Outline
+            </button>
+
+            <!-- Disabled Button -->
+            <button class="btn disabled" disabled>
+                Disabled
+            </button>
+
+        </section>
+
+        <!-- Explanation -->
+        <section class="info">
+
+            <h2>CSS Features Used</h2>
+
+            <p>
+                <strong>:hover</strong> – Changes the button appearance when the mouse is over it.
+            </p>
+
+            <p>
+                <strong>:active</strong> – Applies an effect while the button is being clicked.
+            </p>
+
+            <p>
+                <strong>:focus</strong> – Adds an outline when the button receives keyboard or mouse focus.
+            </p>
+
+            <p>
+                <strong>:disabled</strong> – Styles a button that cannot be clicked.
+            </p>
+
+            <p>
+                <strong>Flexbox</strong> – Aligns all buttons in a row with equal spacing.
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
