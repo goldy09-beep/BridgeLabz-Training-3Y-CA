@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechStore | Product Catalog</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <h1 class="fw-bold">TechStore</h1>
+            <p class="mb-0">
+                Quality technology products at great prices.
+            </p>
+        </div>
+    </header>
+
+    <!-- Products -->
+    <main>
+
+        <section class="container py-5">
+
+            <h2 class="text-center fw-bold mb-5">
+                Product Catalog
+            </h2>
+
+            <!-- row creates grid -->
+            <div class="row g-4">
+
+                <!-- Product 1 -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card product-card shadow-sm h-100">
+
+                        <img src="https://picsum.photos/400/250?random=1"
+                            class="card-img-top"
+                            alt="Wireless Headphones">
+
+                        <div class="card-body text-center">
+                            <h5 class="card-title">
+                                Wireless Headphones
+                            </h5>
+
+                            <p class="fw-bold text-primary">
+                                ₹2,499
+                            </p>
+
+                            <button class="btn btn-primary w-100">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card product-card shadow-sm h-100">
+
+                        <img src="https://picsum.photos/400/250?random=2"
+                            class="card-img-top"
+                            alt="Smart Watch">
+
+                        <div class="card-body text-center">
+                            <h5 class="card-title">
+                                Smart Watch
+                            </h5>
+
+                            <p class="fw-bold text-primary">
+                                ₹3,999
+                            </p>
+
+                            <button class="btn btn-primary w-100">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card product-card shadow-sm h-100">
+
+                        <img src="https://picsum.photos/400/250?random=3"
+                            class="card-img-top"
+                            alt="Laptop Backpack">
+
+                        <div class="card-body text-center">
+                            <h5 class="card-title">
+                                Laptop Backpack
+                            </h5>
+
+                            <p class="fw-bold text-primary">
+                                ₹1,299
+                            </p>
+
+                            <button class="btn btn-primary w-100">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card product-card shadow-sm h-100">
+
+                        <img src="https://picsum.photos/400/250?random=4"
+                            class="card-img-top"
+                            alt="Mechanical Keyboard">
+
+                        <div class="card-body text-center">
+                            <h5 class="card-title">
+                                Mechanical Keyboard
+                            </h5>
+
+                            <p class="fw-bold text-primary">
+                                ₹3,499
+                            </p>
+
+                            <button class="btn btn-primary w-100">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card product-card shadow-sm h-100">
+
+                        <img src="https://picsum.photos/400/250?random=5"
+                            class="card-img-top"
+                            alt="Bluetooth Speaker">
+
+                        <div class="card-body text-center">
+                            <h5 class="card-title">
+                                Bluetooth Speaker
+                            </h5>
+
+                            <p class="fw-bold text-primary">
+                                ₹1,899
+                            </p>
+
+                            <button class="btn btn-primary w-100">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card product-card shadow-sm h-100">
+
+                        <img src="https://picsum.photos/400/250?random=6"
+                            class="card-img-top"
+                            alt="Gaming Mouse">
+
+                        <div class="card-body text-center">
+                            <h5 class="card-title">
+                                Gaming Mouse
+                            </h5>
+
+                            <p class="fw-bold text-primary">
+                                ₹1,599
+                            </p>
+
+                            <button class="btn btn-primary w-100">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card product-card shadow-sm h-100">
+
+                        <img src="https://picsum.photos/400/250?random=7"
+                            class="card-img-top"
+                            alt="Travel Bottle">
+
+                        <div class="card-body text-center">
+                            <h5 class="card-title">
+                                Travel Bottle
+                            </h5>
+
+                            <p class="fw-bold text-primary">
+                                ₹699
+                            </p>
+
+                            <button class="btn btn-primary w-100">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="card product-card shadow-sm h-100">
+
+                        <img src="https://picsum.photos/400/250?random=8"
+                            class="card-img-top"
+                            alt="LED Desk Lamp">
+
+                        <div class="card-body text-center">
+                            <h5 class="card-title">
+                                LED Desk Lamp
+                            </h5>
+
+                            <p class="fw-bold text-primary">
+                                ₹899
+                            </p>
+
+                            <button class="btn btn-primary w-100">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">
+            © 2026 TechStore
+        </p>
+    </footer>
+
+</body>
+</html>
