@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Combined Responsive Web Demo</title>
+
+    <style>
+        /* ================= GENERAL STYLING ================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            background-color: #222;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 40px;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+        }
+
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #bbb;
+        }
+
+
+        /* ================= MAIN GRID ================= */
+
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 25px;
+        }
+
+        .main-grid {
+            display: grid;
+
+            /* Three sections */
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ================= COMMON SECTION STYLE ================= */
+
+        .section {
+            background-color: white;
+            padding: 25px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+
+            /* Fade-in animation */
+            animation: fadeIn 1s ease-in;
+            
+            /* Hover transition */
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+        /* ================= IMAGE GALLERY ================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+
+            border-radius: 6px;
+
+            filter: grayscale(70%);
+
+            transition: filter 0.4s ease,
+                        transform 0.4s ease;
+        }
+
+        .gallery img:hover {
+            filter: none;
+            transform: scale(1.05);
+        }
+
+
+        /* ================= RESPONSIVE DESIGN TEXT ================= */
+
+        .explanation p {
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            padding: 12px;
+            background-color: #eee;
+
+            border-left: 4px solid #222;
+
+            font-family: monospace;
+        }
+
+
+        /* ================= CHEAT SHEET ================= */
+
+        .cheat-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cheat-item {
+            padding: 12px;
+
+            background-color: #eee;
+
+            border-radius: 6px;
+
+            transition: background-color 0.3s ease,
+                        transform 0.3s ease;
+        }
+
+        .cheat-item:hover {
+            background-color: #ddd;
+            transform: translateX(5px);
+        }
+
+        .cheat-item strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+
+        /* ================= FADE-IN ANIMATION ================= */
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background-color: #222;
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 20px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+
+        /* ================= RESPONSIVE DESIGN ================= */
+
+        /* Below 700px, all sections stack vertically */
+
+        @media (max-width: 699px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+
+                text-align: center;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            main {
+                padding: 25px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            <h1>WebTech</h1>
+        </div>
+
+        <!-- Navigation using Flexbox -->
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main>
+
+        <div class="main-grid">
+
+            <!-- ================= IMAGE GALLERY ================= -->
+
+            <section class="section">
+
+                <h2>Image Gallery</h2>
+
+                <div class="gallery">
+
+                    <img
+                        src="https://picsum.photos/id/1015/500/350"
+                        alt="Mountain landscape">
+
+                    <img
+                        src="https://picsum.photos/id/1025/500/350"
+                        alt="Dog">
+
+                    <img
+                        src="https://picsum.photos/id/1035/500/350"
+                        alt="Nature landscape">
+
+                    <img
+                        src="https://picsum.photos/id/1043/500/350"
+                        alt="Forest landscape">
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= RESPONSIVE DESIGN EXPLANATION ================= -->
+
+            <section class="section explanation">
+
+                <h2>Responsive Design</h2>
+
+                <p>
+                    Responsive web design allows a website to adapt
+                    to different screen sizes and devices.
+                </p>
+
+                <p>
+                    CSS Flexbox, Grid, media queries and relative
+                    units can be combined to create flexible layouts.
+                </p>
+
+                <div class="highlight">
+                    @media (max-width: 700px)
+                </div>
+
+                <p>
+                    At smaller screen sizes, the layout changes
+                    from multiple columns into a single column.
+                </p>
+
+            </section>
+
+
+            <!-- ================= CHEAT SHEET ================= -->
+
+            <section class="section">
+
+                <h2>CSS Cheat Sheet</h2>
+
+                <div class="cheat-list">
+
+                    <div class="cheat-item">
+                        <strong>Flexbox</strong>
+                        Used for one-dimensional layouts.
+                    </div>
+
+                    <div class="cheat-item">
+                        <strong>Grid</strong>
+                        Used for rows and columns.
+                    </div>
+
+                    <div class="cheat-item">
+                        <strong>Media Queries</strong>
+                        Adapt styles according to screen size.
+                    </div>
+
+                    <div class="cheat-item">
+                        <strong>Clamp()</strong>
+                        Creates flexible and responsive text sizes.
+                    </div>
+
+                    <div class="cheat-item">
+                        <strong>Transitions</strong>
+                        Creates smooth hover effects.
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p><strong>Contact Us</strong></p>
+        <p>Email: info@webtech.com</p>
+        <p>Phone: +91 98765 43210</p>
+
+    </footer>
+
+</body>
+
+</html>
+

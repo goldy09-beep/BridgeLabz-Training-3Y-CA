@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Dashboard Summary</title>
+
+    <style>
+
+        /* ================= BASIC RESET ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+
+        /* ================= DASHBOARD GRID ================= */
+
+        .dashboard {
+            min-height: 100vh;
+
+            display: grid;
+
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: 80px 1fr;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            grid-column: 1 / -1;
+
+            background-color: #222;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 30px;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        header p {
+            font-size: 14px;
+        }
+
+
+        /* ================= SIDEBAR ================= */
+
+        .sidebar {
+            background-color: #333;
+            color: white;
+
+            padding: 30px 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 18px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+
+            transition: color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            color: #bbb;
+        }
+
+
+        /* ================= MAIN CONTENT ================= */
+
+        main {
+            padding: 35px;
+
+            animation: loadAnimation 0.8s ease-in;
+        }
+
+        main h2 {
+            margin-bottom: 25px;
+        }
+
+
+        /* ================= DASHBOARD CARDS ================= */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            animation: cardLoad 0.8s ease-in;
+        }
+
+        .card:hover {
+            transform: scale(1.04);
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 21px;
+        }
+
+        .card p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .card a {
+            color: #222;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ================= LOAD ANIMATION ================= */
+
+        @keyframes loadAnimation {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes cardLoad {
+
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+
+        /* ================= RESPONSIVE DESIGN ================= */
+
+        @media (max-width: 749px) {
+
+            .dashboard {
+                display: flex;
+                flex-direction: column;
+            }
+
+            header {
+                width: 100%;
+
+                flex-direction: column;
+                gap: 8px;
+
+                text-align: center;
+            }
+
+            .sidebar {
+                width: 100%;
+
+                text-align: center;
+
+                padding: 20px;
+            }
+
+            .sidebar h2 {
+                margin-bottom: 15px;
+            }
+
+            .sidebar ul {
+                display: flex;
+
+                justify-content: center;
+                flex-wrap: wrap;
+
+                gap: 20px;
+            }
+
+            .sidebar li {
+                margin-bottom: 0;
+            }
+
+            main {
+                width: 100%;
+                padding: 25px 15px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <div class="dashboard">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <header>
+
+            <h1>Responsive Dashboard</h1>
+
+            <p>CSS Design Summary</p>
+
+        </header>
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <h2>Dashboard Menu</h2>
+
+            <ul>
+
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="#">Filters</a>
+                </li>
+
+                <li>
+                    <a href="#">Typography</a>
+                </li>
+
+                <li>
+                    <a href="#">Media Queries</a>
+                </li>
+
+                <li>
+                    <a href="#">Cheat Sheet</a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main>
+
+            <h2>Responsive Design Concepts</h2>
+
+
+            <section class="cards">
+
+
+                <!-- FILTER CARD -->
+
+                <article class="card">
+
+                    <h3>CSS Filters</h3>
+
+                    <p>
+                        CSS filters can be used to change the appearance
+                        of images using effects such as grayscale,
+                        blur, brightness and contrast.
+                    </p>
+
+                    <a href="#">View Filter Examples →</a>
+
+                </article>
+
+
+                <!-- TYPOGRAPHY CARD -->
+
+                <article class="card">
+
+                    <h3>Typography</h3>
+
+                    <p>
+                        Responsive typography allows text to adjust
+                        according to different screen sizes using
+                        relative units and the clamp() function.
+                    </p>
+
+                    <a href="#">View Typography Guide →</a>
+
+                </article>
+
+
+                <!-- MEDIA QUERIES CARD -->
+
+                <article class="card">
+
+                    <h3>Media Queries</h3>
+
+                    <p>
+                        Media queries apply different CSS rules at
+                        specific screen sizes to create responsive
+                        layouts for desktops, tablets and mobiles.
+                    </p>
+
+                    <a href="#">View Media Queries →</a>
+
+                </article>
+
+
+                <!-- CHEAT SHEET CARD -->
+
+                <article class="card">
+
+                    <h3>Cheat Sheet</h3>
+
+                    <p>
+                        Quickly review important CSS concepts including
+                        Grid, Flexbox, filters, typography and responsive
+                        design techniques.
+                    </p>
+
+                    <a href="#">Open Cheat Sheet →</a>
+
+                </article>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
