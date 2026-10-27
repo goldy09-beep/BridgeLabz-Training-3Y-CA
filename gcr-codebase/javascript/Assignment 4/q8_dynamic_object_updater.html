@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Object Updater</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px #ccc;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 11px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #userDetails {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f8ee;
+            border-radius: 6px;
+            overflow-wrap: anywhere;
+        }
+
+        #message {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Dynamic Object Updater</h2>
+
+        <form id="userForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" min="1" required>
+
+            <button type="submit">Update User</button>
+        </form>
+
+        <h3>Updated User Details</h3>
+        <div id="userDetails"></div>
+        <p id="message" aria-live="polite"></p>
+    </div>
+
+    <script>
+        "use strict";
+
+        // Original user object
+        const user = {
+            name: "John",
+            email: "john@mail.com",
+            age: 21
+        };
+
+        // Get form and display elements
+        const userForm = document.getElementById("userForm");
+        const userDetails = document.getElementById("userDetails");
+        const message = document.getElementById("message");
+
+        // Display user details using the DOM
+        function displayUser() {
+            userDetails.innerHTML = `
+                <p><strong>Name:</strong> ${user.name}</p>
+                <p><strong>Email:</strong> ${user.email}</p>
+                <p><strong>Age:</strong> ${user.age}</p>
+            `;
+        }
+
+        // Fill the form with the original user details
+        document.getElementById("name").value = user.name;
+        document.getElementById("email").value = user.email;
+        document.getElementById("age").value = user.age;
+
+        // Display initial details
+        displayUser();
+
+        // Update the object when the form is submitted
+        userForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Update existing object properties
+            user.name = document.getElementById("name").value.trim();
+            user.email = document.getElementById("email").value.trim();
+            user.age = Number(document.getElementById("age").value);
+
+            // Display updated details
+            displayUser();
+
+            message.textContent = "User details updated successfully!";
+
+            // Show the updated object in the console
+            console.log("Updated User Object:", user);
+        });
+    </script>
+
+</body>
+</html>

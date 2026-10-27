@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 11px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Login Form</h2>
+
+        <form id="loginForm" novalidate>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username">
+            <div id="usernameError" class="error"></div>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+            <div id="passwordError" class="error"></div>
+
+            <button type="submit">Login</button>
+
+            <div id="message" aria-live="polite"></div>
+        </form>
+    </div>
+
+    <script>
+        "use strict";
+
+        // RegExp: Username must contain at least 5 characters
+        const usernamePattern = /^.{5,}$/;
+
+        // Password must contain:
+        // At least 8 characters, one digit, one uppercase,
+        // one lowercase, and one special character.
+        const passwordPattern =
+            /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9\s])\S{8,}$/;
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const usernameError = document.getElementById("usernameError");
+            const passwordError = document.getElementById("passwordError");
+            const message = document.getElementById("message");
+
+            // Clear previous messages
+            usernameError.textContent = "";
+            passwordError.textContent = "";
+            message.textContent = "";
+            message.className = "";
+
+            let isValid = true;
+
+            // Validate username
+            if (!usernamePattern.test(username)) {
+                usernameError.textContent =
+                    "Username must contain at least 5 characters.";
+                isValid = false;
+            }
+
+            // Validate password length
+            if (password.length < 8) {
+                passwordError.textContent =
+                    "Password must contain at least 8 characters.";
+                isValid = false;
+            } else {
+                // Check each password requirement separately
+                if (!/[0-9]/.test(password)) {
+                    passwordError.textContent +=
+                        " Include at least one number. ";
+                    isValid = false;
+                }
+
+                if (!/[A-Z]/.test(password)) {
+                    passwordError.textContent +=
+                        " Include at least one uppercase letter. ";
+                    isValid = false;
+                }
+
+                if (!/[a-z]/.test(password)) {
+                    passwordError.textContent +=
+                        " Include at least one lowercase letter. ";
+                    isValid = false;
+                }
+
+                if (!/[^A-Za-z0-9\s]/.test(password)) {
+                    passwordError.textContent +=
+                        " Include at least one special character. ";
+                    isValid = false;
+                }
+
+                if (/\s/.test(password)) {
+                    passwordError.textContent +=
+                        " Spaces are not allowed in the password. ";
+                    isValid = false;
+                }
+            }
+
+            // Display result
+            if (isValid) {
+                message.textContent = "Login validation successful!";
+                message.className = "success";
+                console.log("Username:", username);
+                console.log("Login validation successful!");
+            } else {
+                console.log("Login validation failed.");
+            }
+        });
+    </script>
+
+</body>
+</html>

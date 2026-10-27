@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px #ccc;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 11px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eef6ff;
+            border-radius: 6px;
+            white-space: pre-wrap;
+        }
+
+        #message {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Shopping Cart</h2>
+
+        <h3>Add Item</h3>
+
+        <form id="itemForm">
+            <label for="itemName">Item Name</label>
+            <input type="text" id="itemName" required>
+
+            <label for="itemPrice">Price (₹)</label>
+            <input type="number" id="itemPrice" min="0.01" step="0.01" required>
+
+            <label for="itemQuantity">Quantity</label>
+            <input type="number" id="itemQuantity" min="1" step="1" required>
+
+            <button type="submit">Add to Cart</button>
+        </form>
+
+        <h3>Apply Coupon</h3>
+
+        <form id="couponForm">
+            <label for="coupon">Coupon Code</label>
+            <input type="text" id="coupon" placeholder="Example: SAVE20 or DISC10">
+
+            <button type="submit">Apply Coupon</button>
+        </form>
+
+        <div id="result">Your cart is empty.</div>
+        <p id="message" aria-live="polite"></p>
+    </div>
+
+    <script>
+        "use strict";
+
+        // Shopping Cart class
+        class Cart {
+            constructor() {
+                this.items = [];
+                this.discount = 0;
+            }
+
+            // Add an item to the cart
+            addItem(name, price, quantity) {
+                this.items.push({
+                    name: name,
+                    price: price,
+                    quantity: quantity
+                });
+            }
+
+            // Calculate total before discount
+            getTotal() {
+                return this.items.reduce(
+                    (total, item) => total + item.price * item.quantity,
+                    0
+                );
+            }
+
+            // Validate coupon and apply its percentage discount
+            applyCoupon(code) {
+                const couponPattern = /^(SAVE20|DISC10)$/;
+
+                if (!couponPattern.test(code)) {
+                    return false;
+                }
+
+                if (code === "SAVE20") {
+                    this.discount = 20;
+                } else if (code === "DISC10") {
+                    this.discount = 10;
+                }
+
+                return true;
+            }
+
+            // Calculate final total after discount
+            getFinalTotal() {
+                return this.getTotal() * (1 - this.discount / 100);
+            }
+        }
+
+        // Create cart object
+        const cart = new Cart();
+
+        const result = document.getElementById("result");
+        const message = document.getElementById("message");
+
+        // Display cart items and totals
+        function displayCart() {
+            if (cart.items.length === 0) {
+                result.textContent = "Your cart is empty.";
+                return;
+            }
+
+            let details = "--- Cart Items ---\n";
+
+            cart.items.forEach(item => {
+                details += `${item.name} - ₹${item.price.toFixed(2)} x ${item.quantity} = ₹${(item.price * item.quantity).toFixed(2)}\n`;
+            });
+
+            details += `\nSubtotal: ₹${cart.getTotal().toFixed(2)}`;
+            details += `\nDiscount: ${cart.discount}%`;
+            details += `\nFinal Total: ₹${cart.getFinalTotal().toFixed(2)}`;
+
+            result.textContent = details;
+        }
+
+        // Handle adding items
+        document.getElementById("itemForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("itemName").value.trim();
+            const price = Number(document.getElementById("itemPrice").value);
+            const quantity = Number(document.getElementById("itemQuantity").value);
+
+            if (!name || !Number.isFinite(price) || price <= 0 ||
+                !Number.isInteger(quantity) || quantity < 1) {
+                message.style.color = "red";
+                message.textContent = "Enter a valid name, positive price, and whole-number quantity.";
+                return;
+            }
+
+            cart.addItem(name, price, quantity);
+
+            // Recalculate total when the cart changes
+            displayCart();
+
+            message.style.color = "green";
+            message.textContent = "Item added successfully!";
+
+            this.reset();
+
+            console.log("Updated cart:", cart.items);
+            console.log("Cart subtotal:", cart.getTotal());
+        });
+
+        // Handle coupon submission
+        document.getElementById("couponForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const code = document.getElementById("coupon").value.trim();
+
+            if (cart.items.length === 0) {
+                message.style.color = "red";
+                message.textContent = "Add items to your cart before applying a coupon.";
+                return;
+            }
+
+            if (cart.applyCoupon(code)) {
+                message.style.color = "green";
+                message.textContent = `Coupon ${code} applied successfully!`;
+                displayCart();
+
+                console.log("Discount:", cart.discount + "%");
+                console.log("Final total:", cart.getFinalTotal());
+            } else {
+                message.style.color = "red";
+                message.textContent =
+                    "Invalid coupon! Use SAVE20 for 20% off or DISC10 for 10% off.";
+            }
+        });
+    </script>
+
+</body>
+</html>

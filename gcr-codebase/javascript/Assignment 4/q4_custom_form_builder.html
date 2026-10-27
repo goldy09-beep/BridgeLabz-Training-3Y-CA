@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Form Builder</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f8;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px #cccccc;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 11px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 12px;
+            background: #eef6ff;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Custom Form Builder</h2>
+
+        <form id="dynamicForm"></form>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        "use strict";
+
+        // Class to build a form dynamically
+        class FormBuilder {
+            constructor(fields, formId) {
+                this.fields = fields;
+                this.form = document.getElementById(formId);
+                this.createForm();
+            }
+
+            // Create form fields using innerHTML
+            createForm() {
+                let formHTML = "";
+
+                this.fields.forEach((field, index) => {
+                    const id = `field${index}`;
+
+                    formHTML += `
+                        <div class="form-group">
+                            <label for="${id}">${field.label}</label>
+                            <input
+                                type="${field.type}"
+                                id="${id}"
+                                name="${field.name}"
+                                placeholder="${field.placeholder || ""}"
+                                required
+                            >
+                        </div>
+                    `;
+                });
+
+                formHTML += `
+                    <button type="submit">Submit</button>
+                `;
+
+                this.form.innerHTML = formHTML;
+
+                // Handle form submission
+                this.form.addEventListener("submit", (event) => {
+                    event.preventDefault();
+
+                    const formData = this.getFormData();
+
+                    document.getElementById("output").textContent =
+                        "Submitted Form Data:\n" +
+                        JSON.stringify(formData, null, 2);
+
+                    console.log("Form Data:", formData);
+                });
+            }
+
+            // Return all entered values as an object
+            getFormData() {
+                const data = {};
+
+                this.fields.forEach((field, index) => {
+                    const id = `field${index}`;
+                    const input = document.getElementById(id);
+
+                    data[field.name] = input.value;
+                });
+
+                return data;
+            }
+        }
+
+        // Define the fields to generate
+        const fields = [
+            {
+                type: "text",
+                label: "Username",
+                name: "username",
+                placeholder: "Enter your username"
+            },
+            {
+                type: "email",
+                label: "Email",
+                name: "email",
+                placeholder: "Enter your email"
+            },
+            {
+                type: "password",
+                label: "Password",
+                name: "password",
+                placeholder: "Enter your password"
+            },
+            {
+                type: "number",
+                label: "Age",
+                name: "age",
+                placeholder: "Enter your age"
+            }
+        ];
+
+        // Create the form
+        const formBuilder = new FormBuilder(fields, "dynamicForm");
+    </script>
+
+</body>
+</html>
